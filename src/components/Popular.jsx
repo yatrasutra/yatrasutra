@@ -11,31 +11,30 @@ const packages = [
     position: 'md:col-span-2 md:row-span-2'
   },
   { 
-    key: 'thailand', 
-    name: 'Thailand', 
-    image: 'https://i.pinimg.com/1200x/86/63/49/866349dcbd04b86af456875a27dce5b6.jpg',
-    description: 'Land of smiles',
-    position: 'md:col-span-1 md:row-span-1'
-  },
-  { 
-    key: 'maldives', 
-    name: 'Maldives', 
-    image: 'https://i.pinimg.com/1200x/be/04/3e/be043ea1eebfc926a7881918acadcba4.jpg',
-    description: 'Paradise on Earth',
-    position: 'md:col-span-1 md:row-span-1'
-  },
-   { 
-    key: 'malaysia', 
-    name: 'Malaysia', 
-    image: 'https://i.pinimg.com/736x/bc/c2/b2/bcc2b2f9b8f90df69621a9b530041151.jpg',
-    description: 'Truly Asia experience',
-    position: 'md:col-span-2 md:row-span-2'
-  },
-  { 
     key: 'srilanka', 
     name: 'Sri Lanka', 
     image: 'https://i.pinimg.com/1200x/7a/fb/18/7afb1867ab39dcc0187ca69d9318d791.jpg',
     description: 'Pearl of the Indian Ocean',
+    position: 'md:col-span-1 md:row-span-1'
+  },
+  { key: 'malaysia', 
+    name: 'Malaysia', 
+    image: 'https://i.pinimg.com/736x/bc/c2/b2/bcc2b2f9b8f90df69621a9b530041151.jpg',
+    description: 'Truly Asia experience',
+    position: 'md:col-span-1 md:row-span-1'
+  },
+   { 
+    key: 'maldives', 
+    name: 'Maldives', 
+    image: 'https://i.pinimg.com/1200x/be/04/3e/be043ea1eebfc926a7881918acadcba4.jpg',
+    description: 'Paradise on Earth',
+    position: 'md:col-span-2 md:row-span-2'
+  },
+  { 
+    key: 'thailand', 
+    name: 'Thailand', 
+    image: 'https://i.pinimg.com/1200x/86/63/49/866349dcbd04b86af456875a27dce5b6.jpg',
+    description: 'Land of smiles',
     position: 'md:col-span-1 md:row-span-1'
   },
   { 
