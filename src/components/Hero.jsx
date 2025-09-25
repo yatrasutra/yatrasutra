@@ -20,18 +20,18 @@ export default function Hero() {
               travel smarter—beautifully organized in one place.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-8 flex items-center gap-3">
               <a
                 href="#get-started"
-                className="inline-flex items-center justify-center rounded-lg bg-orange-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                className="inline-flex items-center justify-center rounded-lg bg-orange-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 flex-1 min-w-[140px]"
               >
-                Start your journey
+                Get Started
               </a>
               <a
                 href="#explore"
-                className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-indigo-900 px-5 py-3 text-sm font-semibold text-white shadow-sm backdrop-blur-sm transition hover:bg-indigo-700"
+                className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-indigo-900 px-5 py-3 text-sm font-semibold text-white shadow-sm backdrop-blur-sm transition hover:bg-indigo-700 flex-1 min-w-[140px]"
               >
-                Explore destinations
+                Destinations
               </a>
             </div>
             
