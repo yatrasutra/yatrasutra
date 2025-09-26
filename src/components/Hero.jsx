@@ -9,27 +9,27 @@ export default function Hero() {
             <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium text-slate-800 shadow-sm backdrop-blur-sm">
               🟠 Curate memories, not just trips
             </span>
-            <h1 className="mt-5 text-5xl font-extrabold tracking-tight text-indigo-900 sm:text-5xl lg:text-7xl">
+            <h1 className="mt-5 text-5xl font-extrabold tracking-tight text-blue-900 sm:text-5xl lg:text-7xl">
               Plan your next
               <br />
               <span style={{ color: '#EA5327' }}>gateway </span>
               {" "}to adventure
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-7 text-slate-700 sm:text-lg">
+            <p className="mt-8 max-w-xl text-base leading-7 text-slate-700 sm:text-lg">
               YatraSutra helps you discover destinations, craft itineraries, and
               travel smarter—beautifully organized in one place.
             </p>
 
-            <div className="mt-8 flex items-center gap-3">
+            <div className="mt-12 flex items-center gap-3">
               <a
                 href="#get-started"
-                className="inline-flex items-center justify-center rounded-lg bg-orange-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 flex-1 min-w-[140px]"
+                className="inline-flex items-center justify-center rounded-lg bg-orange-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 flex-1 max-w-[140px]"
               >
                 Get Started
               </a>
               <a
                 href="#explore"
-                className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-indigo-900 px-5 py-3 text-sm font-semibold text-white shadow-sm backdrop-blur-sm transition hover:bg-indigo-700 flex-1 min-w-[140px]"
+                className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-blue-900 px-5 py-3 text-sm font-semibold text-white shadow-sm backdrop-blur-sm transition hover:bg-indigo-700 flex-1 max-w-[140px]"
               >
                 Destinations
               </a>

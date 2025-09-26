@@ -1,4 +1,5 @@
 import React, { useState, Children, useRef, useLayoutEffect } from 'react';
+import { FaInfoCircle } from "react-icons/fa";
 
 // Form Data Hook
 function useEnquiryForm() {
@@ -100,100 +101,127 @@ export default function TravelEnquiryForm({
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-16">
         {/* Header */}
         <div className="mb-6 sm:mb-8 md:mb-12 text-start sm:text-left ml-0 sm:ml-4">
-          
-          
-          <h2 className="ml-2 mt-1 sm:mt-4 text-start text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight text-indigo-900">
+          <h2 className="ml-2 mt-1 sm:mt-4 text-start text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-6xl font-extrabold tracking-tight text-indigo-900">
             {title.split(' ')[0]}{" "}
             <span style={{ color: '#EA5327' }}>
               {title.split(' ').slice(1).join(' ')}
             </span>
           </h2>
-          
           <p className="ml-2 mt-2 sm:mt-3 text-left text-sm sm:text-base leading-5 sm:leading-6 md:leading-7 text-slate-700">
             {subtitle}
           </p>
         </div>
 
-        {/* Glass Container - Optimized for Samsung Z Fold and other devices */}
-        <div className="bg-white/30 backdrop-blur-lg rounded-2xl sm:rounded-3xl border border-white/40 shadow-xl p-3 sm:p-4 md:p-6 max-w-2xl mx-auto lg:mx-0">
-          <div className="bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl sm:rounded-2xl shadow-lg overflow-hidden">
-            {/* Step Indicators - now with 5 steps */}
-            <div className="flex items-center justify-center p-4 sm:p-6 bg-indigo-800 rounded-t-xl sm:rounded-t-2xl">
-              {[1, 2, 3, 4, 5].map((step, index) => (
-                <React.Fragment key={step}>
-                  <StepIndicator
-                    step={step}
-                    currentStep={isSubmitted ? 5 : currentStep}
-                    isValid={step <= (isSubmitted ? 5 : currentStep)}
-                    onClick={() => !isSubmitted && handleStepClick(step)}
-                  />
-                  {index < 4 && <StepConnector isComplete={(isSubmitted ? 5 : currentStep) > step} />}
-                </React.Fragment>
-              ))}
-            </div>
-
-            {/* Form Content */}
-            <div className="p-4 sm:p-6 md:p-8">
-              {isSubmitted ? (
-                <div className="text-center py-6 sm:py-8">
-                  <div className="bg-white/90 backdrop-blur-sm border border-green-200 rounded-2xl shadow-xl p-6 sm:p-8 inline-block max-w-md w-full">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                      <svg className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-800 mb-2">Enquiry Submitted!</h3>
-                    <p className="text-sm sm:text-base text-slate-600 mb-3 sm:mb-4">
-                      Thank you for your interest! Our travel experts will contact you within 24 hours to discuss your dream trip.
-                    </p>
-                    <div className="animate-pulse text-orange-600 text-xs sm:text-sm font-medium">
-                      Starting fresh in a moment...
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <>
-                  <StepContentWrapper currentStep={currentStep} direction={direction}>
-                    <FormStep
-                      step={currentStep}
-                      formData={formData}
-                      updateField={updateField}
-                      destinationOptions={destinationOptions}
-                      budgetOptions={budgetOptions}
+        {/* Grid Layout for Form + About */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          {/* Glass Form Container */}
+          <div className="bg-white/30 backdrop-blur-lg rounded-2xl sm:rounded-3xl border border-white/40 shadow-xl p-3 sm:p-4 md:p-6">
+            <div className="bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl sm:rounded-2xl shadow-lg overflow-hidden">
+              {/* Step Indicators */}
+              <div className="flex items-center justify-center p-4 sm:p-6 bg-blue-900 rounded-t-xl sm:rounded-t-2xl">
+                {[1, 2, 3, 4, 5].map((step, index) => (
+                  <React.Fragment key={step}>
+                    <StepIndicator
+                      step={step}
+                      currentStep={isSubmitted ? 5 : currentStep}
+                      isValid={step <= (isSubmitted ? 5 : currentStep)}
+                      onClick={() => !isSubmitted && handleStepClick(step)}
                     />
-                  </StepContentWrapper>
+                    {index < 4 && <StepConnector isComplete={(isSubmitted ? 5 : currentStep) > step} />}
+                  </React.Fragment>
+                ))}
+              </div>
 
-                  {/* Navigation - Improved for touch targets */}
-                  <div className={`flex mt-6 sm:mt-8 ${currentStep === 1 ? 'justify-end' : 'justify-between'}`}>
-                    {currentStep > 1 && (
+              {/* Form Content */}
+              <div className="p-4 sm:p-6 md:p-8">
+                {isSubmitted ? (
+                  <SuccessMessage />
+                ) : (
+                  <>
+                    <StepContentWrapper currentStep={currentStep} direction={direction}>
+                      <FormStep
+                        step={currentStep}
+                        formData={formData}
+                        updateField={updateField}
+                        destinationOptions={destinationOptions}
+                        budgetOptions={budgetOptions}
+                      />
+                    </StepContentWrapper>
+
+                    {/* Navigation */}
+                    <div className={`flex mt-6 sm:mt-8 ${currentStep === 1 ? 'justify-end' : 'justify-between'}`}>
+                      {currentStep > 1 && (
+                        <button
+                          onClick={handleBack}
+                          className="px-4 py-2 sm:px-5 sm:py-2.5 text-sm sm:text-base text-slate-600 hover:text-slate-800 transition-colors duration-200 rounded-lg border border-slate-200 hover:bg-white/50 min-w-[100px] sm:min-w-[120px]"
+                        >
+                          Previous
+                        </button>
+                      )}
                       <button
-                        onClick={handleBack}
-                        className="px-4 py-2 sm:px-5 sm:py-2.5 text-sm sm:text-base text-slate-600 hover:text-slate-800 transition-colors duration-200 rounded-lg border border-slate-200 hover:bg-white/50 min-w-[100px] sm:min-w-[120px]"
+                        onClick={handleNext}
+                        disabled={!isStepValid(currentStep)}
+                        className={`px-4 py-2 sm:px-5 sm:py-2.5 text-sm sm:text-base rounded-lg font-semibold transition-all duration-200 min-w-[100px] sm:min-w-[120px] ${
+                          isStepValid(currentStep)
+                            ? 'bg-orange-600 hover:bg-orange-700 text-white shadow-lg hover:shadow-xl'
+                            : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+                        }`}
                       >
-                        Previous
+                        {isLastStep ? 'Submit Enquiry' : 'Next'}
                       </button>
-                    )}
-                    <button
-                      onClick={handleNext}
-                      disabled={!isStepValid(currentStep)}
-                      className={`px-4 py-2 sm:px-5 sm:py-2.5 text-sm sm:text-base rounded-lg font-semibold transition-all duration-200 min-w-[100px] sm:min-w-[120px] ${
-                        isStepValid(currentStep)
-                          ? 'bg-orange-600 hover:bg-orange-700 text-white shadow-lg hover:shadow-xl'
-                          : 'bg-slate-200 text-slate-400 cursor-not-allowed'
-                      }`}
-                    >
-                      {isLastStep ? 'Submit Enquiry' : 'Next'}
-                    </button>
-                  </div>
-                </>
-              )}
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
           </div>
-        </div>
+
+          {/* About Section */}
+          <div className="bg-white/50 backdrop-blur-lg border border-white/40 rounded-2xl shadow-xl p-6 sm:p-8">
+             <h3 className="text-2xl sm:text-3xl font-bold text-indigo-900 mb-4">About Us</h3>
+             <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
+               At <span className="font-semibold">Yatrasutra Holidays Pvt Ltd</span>, we are experts in beach and island
+               vacations, specializing in <span className="font-medium">Lakshadweep, Maldives, and Sri Lanka</span>.
+               We curate premium holidays that combine <span className="italic">luxury, culture, and adventure</span>.
+               <br /><br />
+               With in-depth destination expertise, trusted partnerships, and tailored itineraries,
+               we make every journey seamless and unforgettable. Our team of travel specialists has personally
+               visited every location we recommend, ensuring authentic experiences that go beyond the generic and typical
+               tourist attractions.
+               <br /><br />
+               </p>
+               
+            </div>
+            
+          </div>
+           <div className=" text-center mt-6 sm:mt-6">
+           <div className="flex flex-col sm:flex-row gap-3 items-center justify-center md:justify-end w-full mx-auto md:mt-[-90px]">
+             {/* Contact Icons */}
+             <div className="hidden sm:flex items-center gap-3">
+               <a href="tel:+1234567890" className="grid h-14 w-14 place-items-center rounded-lg border border-white/40 bg-white/60 text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/80 hover:scale-105">
+                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                 </svg>
+               </a>
+               <a href="mailto:info@yatrasutra.com" className="grid h-14 w-14 place-items-center rounded-lg border border-white/40 bg-white/60 text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/80 hover:scale-105">
+                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                 </svg>
+               </a>
+               <a href="https://wa.me/1234567890" className="grid h-14 w-14 place-items-center rounded-lg border border-white/40 bg-white/60 text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/80 hover:scale-105">
+                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                 </svg>
+               </a>
+             </div>
+             
+             <button className="inline-flex items-center justify-center rounded-tr-[15px] rounded-bl-[15px] bg-orange-600 px-4 sm:px-5 py-2.5 sm:py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 w-[100%] h-[60px] sm:w-auto">
+             <FaInfoCircle className="mr-2 text-xl mt-0" size={20} />More about us 
+             </button>
+             
+           </div>
+         </div>
+          
       </div>
     </section>
   );
@@ -422,5 +450,4 @@ function SuccessMessage() {
     </div>
   );
 }
-
 

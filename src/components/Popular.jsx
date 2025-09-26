@@ -56,7 +56,7 @@ export default function Popular() {
         <div className="mb-8 sm:mb-12 text-start sm:text-left">
           
           
-          <h2 className="mt-4 sm:mt-5 text-start text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight text-indigo-900">
+          <h2 className="mt-4 sm:mt-5 text-start text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight text-blue-900">
             Popular{" "}
             <span style={{ color: '#EA5327' }}>packages</span>
           </h2>
