@@ -55,7 +55,7 @@ const testimonials = [
 // Testimonial Card Component
 const TestimonialCard = ({ img, name, location, body, rating, destination }) => {
   return (
-    <figure className="relative h-full w-80 cursor-pointer overflow-hidden rounded-xl border border-orange-500 bg-white/80 p-4 mx-3 backdrop-blur-sm hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+    <figure className="relative h-full w-80 cursor-pointer overflow-hidden rounded-xl border border-orange-500 bg-white/40 p-4 mx-3 backdrop-blur-sm hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-lg">
       {/* Header with avatar and info */}
       <div className="flex flex-row items-center gap-3 mb-3">
         <img 

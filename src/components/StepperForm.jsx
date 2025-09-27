@@ -100,14 +100,14 @@ export default function TravelEnquiryForm({
     <section className={`w-full mt-1 md:mt-[-30px] overflow-hidden relative ${className}`}>
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-16">
         {/* Header */}
-        <div className="mb-6 sm:mb-8 md:mb-12 text-start sm:text-left ml-0 sm:ml-4">
-          <h2 className="ml-2 mt-1 sm:mt-4 text-start text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-6xl font-extrabold tracking-tight text-indigo-900">
+        <div className="mb-6 sm:mb-8 md:mb-12 text-start sm:text-left">
+          <h2 className="mt-1 sm:mt-4 text-start text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-6xl font-extrabold tracking-tight text-indigo-900">
             {title.split(' ')[0]}{" "}
             <span style={{ color: '#EA5327' }}>
               {title.split(' ').slice(1).join(' ')}
             </span>
           </h2>
-          <p className="ml-2 mt-2 sm:mt-3 text-left text-sm sm:text-base leading-5 sm:leading-6 md:leading-7 text-slate-700">
+          <p className="mt-2 sm:mt-3 text-left text-sm sm:text-base leading-5 sm:leading-6 md:leading-7 text-slate-700">
             {subtitle}
           </p>
         </div>
@@ -186,10 +186,7 @@ export default function TravelEnquiryForm({
             </div>
             
             {/* Background Pattern */}
-            <div className="absolute inset-0 bg-transparent"></div>
-            <div className="absolute bottom-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-16 translate-x-16"></div>
-            <div className="absolute top-0 left-0 w-24 h-24 bg-white/5 rounded-full -translate-y-12 -translate-x-12"></div>
-            
+          
             <div className="relative z-10 p-6 sm:p-8">
               {/* Cruise Icon */}
               <div className="mb-4">
@@ -344,14 +341,14 @@ function FormStep({ step, formData, updateField, destinationOptions, budgetOptio
   const currentStepData = steps[step];
 
   return (
-    <div className="text-center">
-      <h3 className="text-lg sm:text-xl md:text-xl font-semibold text-slate-800 mb-1 sm:mb-2">
+    <div className="text-start">
+      <h3 className="ml-2 text-lg sm:text-xl md:text-xl font-semibold text-slate-800 mb-1 sm:mb-2">
         {currentStepData.title}
       </h3>
-      <p className="text-slate-600 mb-4 sm:mb-6 text-sm sm:text-base">
+      <p className="ml-2 text-slate-600 mb-4 sm:mb-6 text-sm sm:text-base">
         {currentStepData.subtitle}
       </p>
-      <div className="text-left">
+      <div className="text-start">
         {currentStepData.content}
       </div>
     </div>
