@@ -226,7 +226,7 @@ export default function TravelEnquiryForm({
                 </div>
               </div>
               
-              <button className="mt-6 w-[40%] bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-500 hover:to-orange-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-200 transform hover:translate-x-2 hover:-translate-y-1 hover:scale-105 active:translate-x-0 active:translate-y-0 border-b-4 border-r-2 border-orange-700 hover:border-orange-600 active:border-b-2 active:border-r-0">
+              <button className="mt-6 w-full md:w-[40%] bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-500 hover:to-orange-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-200 transform hover:translate-x-2 hover:-translate-y-1 hover:scale-105 active:translate-x-0 active:translate-y-0 border-b-4 border-r-2 border-orange-700 hover:border-orange-600 active:border-b-2 active:border-r-0">
   Book Now
 </button>
             </div>
