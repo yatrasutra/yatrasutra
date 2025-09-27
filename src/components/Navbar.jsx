@@ -69,7 +69,7 @@ export default function Navbar() {
 
         {/* Mobile dropdown */}
         {open && (
-          <div className="mx-1 mt-2 rounded-2xl border border-white/20 bg-white/30 p-4 text-sm text-slate-800 shadow-lg backdrop-blur-md sm:hidden">
+          <div className="mx-4 mt-2 rounded-2xl border border-white/20 bg-white/30 p-4 text-sm text-slate-800 shadow-lg backdrop-blur-md sm:hidden">
             <a href="#explore" className="block rounded-lg px-3 py-2 hover:bg-white/50">Explore</a>
             <a href="#itineraries" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Packages</a>
             <a href="#itineraries" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">About us</a>
@@ -96,9 +96,9 @@ export default function Navbar() {
               </div>
               <a
                 href="#get-started"
-                className="flex-1 rounded-lg bg-orange-600 px-4 py-2 text-center text-white hover:bg-orange-700"
+                className="flex-1 rounded-lg bg-orange-600 px-4 py-2 text-center font-semibold text-white hover:bg-orange-700"
               >
-                Get started
+                Start planning
               </a>
             </div>
           </div>
@@ -107,4 +107,5 @@ export default function Navbar() {
     </header>
   )
 }
+
 
