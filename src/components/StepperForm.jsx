@@ -97,7 +97,7 @@ export default function TravelEnquiryForm({
   };
 
   return (
-    <section className={`w-full mt-1 md:mt-0 overflow-hidden relative ${className}`}>
+    <section className={`w-full mt-1 md:mt-[-30px] overflow-hidden relative ${className}`}>
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-16">
         {/* Header */}
         <div className="mb-6 sm:mb-8 md:mb-12 text-start sm:text-left ml-0 sm:ml-4">
