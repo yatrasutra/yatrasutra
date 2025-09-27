@@ -7,7 +7,7 @@ export default function About() {
           <div className="order-1">
             <div className="mx-auto w-[90%] max-w-lg">
               <img
-                src="/abt2.png"
+                src="/abt3.png"
                 alt="About Yatrasutra"
                 className="w-full h-auto object-contain rounded-2xl md:mt-0 mt-[-30px]"
                 loading="lazy"
@@ -20,16 +20,15 @@ export default function About() {
              <div className="relative">
                {/* Decorative element */}
                
-               <h2 className="text-3xl font-extrabold tracking-tight text-blue-900 sm:text-4xl lg:text-5xl relative z-10 md:ml-0 ml-2">
-                 About <span style={{ color: '#EA5327' }}>Us</span>
+               <h2 className="mb-6 text-3xl font-extrabold tracking-tight text-blue-900 sm:text-4xl lg:text-5xl relative z-10 md:ml-0 ml-2">
+                 Why <span style={{ color: '#EA5327' }}>Yatrasutra</span>
                </h2>
                
                {/* Underline accent */}
-               <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full mt-3 mb-8 md:ml-0 ml-2"></div>
              </div>
              
              <div className="space-y-6 text-slate-700 leading-relaxed">
-               <div className="backdrop-blur-md bg-white/20 border border-white/30 rounded-xl p-6 shadow-lg">
+               <div className="bg-white/50 backdrop-blur-lg border border-white/40 rounded-2xl shadow-xl p-6">
                  <p className="text-base sm:text-lg">
                    At <span className="font-bold text-indigo-900">Yatrasutra Holidays Pvt Ltd</span>, we are experts in beach and island vacations, specializing in <span className="font-semibold text-orange-600">Lakshadweep, Maldives, and Sri Lanka</span>. We curate premium holidays that combine <span className="font-bold text-indigo-900">luxury, culture, and adventure.</span>.
                    With in-depth destination expertise, trusted partnerships, and tailored itineraries, we make every journey seamless and unforgettable. Our team of travel specialists has personally visited every location we recommend, ensuring authentic experiences.
