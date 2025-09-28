@@ -1,24 +1,25 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <nav className="mt-4 flex items-center justify-between rounded-2xl border border-white/20 bg-white/20 px-4 py-3 shadow-lg backdrop-blur-md">
           {/* Brand */}
-          <a href="#" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <span className="font-melody text-4xl text-orange-600">yatrasutra</span>
-          </a>
+          </Link>
 
           {/* Desktop links */}
           <div className="hidden items-center gap-8 text-sm font-medium text-slate-800/90 sm:flex">
-            <a href="#explore" className="transition hover:text-slate-900">Explore</a>
-            <a href="#itineraries" className="transition hover:text-slate-900">Packages</a>
-            <a href="#itineraries" className="transition hover:text-slate-900">About us</a>
-            <a href="#itineraries" className="transition hover:text-slate-900">Gallery</a>
-            <a href="#stories" className="transition hover:text-slate-900">Stories</a>
+            <Link to="/#explore" className="transition hover:text-slate-900">Explore</Link>
+            <Link to="/#itineraries" className="transition hover:text-slate-900">Packages</Link>
+            <Link to="/about" className="transition hover:text-slate-900">About us</Link>
+            <Link to="/#itineraries" className="transition hover:text-slate-900">Gallery</Link>
+            <Link to="/#stories" className="transition hover:text-slate-900">Stories</Link>
           </div>
 
           {/* Desktop CTA */}
@@ -70,11 +71,11 @@ export default function Navbar() {
         {/* Mobile dropdown */}
         {open && (
           <div className="mx-4 mt-2 rounded-2xl border border-white/20 bg-white/30 p-4 text-sm text-slate-800 shadow-lg backdrop-blur-md sm:hidden">
-            <a href="#explore" className="block rounded-lg px-3 py-2 hover:bg-white/50">Explore</a>
-            <a href="#itineraries" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Packages</a>
-            <a href="#itineraries" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">About us</a>
-            <a href="#itineraries" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Gallery</a>
-            <a href="#stories" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Stories</a>
+            <Link to="/#explore" className="block rounded-lg px-3 py-2 hover:bg-white/50">Explore</Link>
+            <Link to="/#itineraries" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Packages</Link>
+            <Link to="/about" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">About us</Link>
+            <Link to="/#itineraries" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Gallery</Link>
+            <Link to="/#stories" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Stories</Link>
             <div className="mt-3 flex items-center justify-between gap-3">
               {/* Socials */}
               <div className="flex items-center gap-3">
@@ -105,7 +106,5 @@ export default function Navbar() {
         )}
       </div>
     </header>
-  )
+  );
 }
-
-

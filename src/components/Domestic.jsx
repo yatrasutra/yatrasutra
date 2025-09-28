@@ -1,68 +1,91 @@
 import { useState } from 'react';
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
-
-const packages = [
+const domesticPackages = [
   { 
-    key: 'lakshadweep', 
-    name: 'Lakshadweep', 
-    image: 'https://i.pinimg.com/736x/f4/63/c6/f463c63423fe47f5b82157dc4f2f22ca.jpg',
-    description: 'Pristine coral islands',
-    position: 'md:col-span-2 md:row-span-2'
-  },
-  { 
-    key: 'srilanka', 
-    name: 'Sri Lanka', 
-    image: 'https://i.pinimg.com/1200x/7a/fb/18/7afb1867ab39dcc0187ca69d9318d791.jpg',
-    description: 'Pearl of the Indian Ocean',
-    position: 'md:col-span-1 md:row-span-1'
-  },
-  { key: 'malaysia', 
-    name: 'Malaysia', 
-    image: 'https://i.pinimg.com/736x/bc/c2/b2/bcc2b2f9b8f90df69621a9b530041151.jpg',
-    description: 'Truly Asia experience',
-    position: 'md:col-span-1 md:row-span-1'
-  },
-   { 
-    key: 'maldives', 
-    name: 'Maldives', 
-    image: 'https://i.pinimg.com/1200x/be/04/3e/be043ea1eebfc926a7881918acadcba4.jpg',
-    description: 'Paradise on Earth',
-    position: 'md:col-span-2 md:row-span-2'
-  },
-  { 
-    key: 'thailand', 
-    name: 'Thailand', 
-    image: 'https://i.pinimg.com/1200x/86/63/49/866349dcbd04b86af456875a27dce5b6.jpg',
-    description: 'Land of smiles',
-    position: 'md:col-span-1 md:row-span-1'
-  },
-  { 
-    key: 'vietnam', 
-    name: 'Vietnam', 
-    image: 'https://i.pinimg.com/1200x/fe/c4/95/fec4951b504d36c5729c70a5b9a23b61.jpg',
+    key: 'kerala', 
+    name: 'Kerala', 
+    image: 'https://i.pinimg.com/736x/e7/c4/c4/e7c4c47a7f6ed3a83e281caf70af3694.jpg',
     description: "God's own country",
+    position: 'md:col-span-2 md:row-span-2'
+  },
+  { 
+    key: 'meghalaya', 
+    name: 'Meghalaya', 
+    image: 'https://i.pinimg.com/736x/7b/1b/13/7b1b131b37f0cef3c89e55a48f71699b.jpg',
+    description: 'Abode of clouds',
     position: 'md:col-span-1 md:row-span-1'
   },
+  { 
+    key: 'himachal', 
+    name: 'Himachal Pradesh', 
+    image: 'https://i.pinimg.com/1200x/6c/bd/ae/6cbdae8146d8eb235085b34bce86faa9.jpg',
+    description: 'Land of snow',
+    position: 'md:col-span-1 md:row-span-1'
+  },
+  { 
+    key: 'ladakh', 
+    name: 'Ladakh', 
+    image: 'https://i.pinimg.com/1200x/3d/e1/e7/3de1e7e11e347f5773c83306986d4450.jpg',
+    description: 'Land of high passes',
+    position: 'md:col-span-1 md:row-span-1'
+  },
+  { 
+    key: 'sikkim', 
+    name: 'Sikkim', 
+    image: 'https://i.pinimg.com/736x/64/7e/b0/647eb0f58e3481667bb12290e7c90cc6.jpg',
+    description: 'Paradise of Himalayas',
+    position: 'md:col-span-1 md:row-span-1'
+  },
+  { 
+    key: 'kashmir', 
+    name: 'Kashmir', 
+    image: 'https://i.pinimg.com/1200x/4a/0c/cc/4a0ccc9b68fe1d7ea9ba9e80cb13dbee.jpg',
+    description: 'Heaven on Earth',
+    position: 'md:col-span-2 md:row-span-1'
+  },
+  { 
+    key: 'rajasthan', 
+    name: 'Rajasthan', 
+    image: 'https://i.pinimg.com/1200x/7c/f9/a4/7cf9a4e798828e604ba5bc7f3ef2bec4.jpg',
+    description: 'Land of kings',
+    position: 'md:col-span-1 md:row-span-1'
+  },
+  { 
+    key: 'hyderabad', 
+    name: 'Hyderabad', 
+    image: 'https://i.pinimg.com/736x/03/32/f2/0332f29360b59cd0dac5fc42137b7233.jpg',
+    description: 'City of pearls',
+    position: 'md:col-span-1 md:row-span-1'
+  },
+  { 
+    key: 'odisha', 
+    name: 'Odisha', 
+    image: 'https://i.pinimg.com/1200x/ef/26/6a/ef266a54a684fbbf3cec96317509548c.jpg',
+    description: 'Temple state of India',
+    position: 'md:col-span-1 md:row-span-1'
+  }
 ];
 
-export default function Popular() {
+export default function Domestic() {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   return (
-    <section className="w-full mt-[-80px] md:mt-[-30px] overflow-hidden relative">
+    <section className="w-full mt-[-2px] md:mt-[-30px] overflow-hidden relative">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         {/* Header */}
         <div className="mb-8 sm:mb-12 text-start sm:text-left">
-          
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/60 px-3 py-1 text-xs font-medium text-slate-800 shadow-sm backdrop-blur-sm">
+            Explore the beauty of India
+          </span>
           
           <h2 className="mt-4 sm:mt-5 text-start text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight text-blue-900">
-            Popular{" "}
-            <span style={{ color: '#EA5327' }}>packages</span>
+            Domestic{" "}
+            <span style={{ color: '#EA5327' }}>destinations</span>
           </h2>
           
           <p className="mt-3 sm:mt-4 text-left sm:text-left text-sm sm:text-base leading-6 sm:leading-7 text-slate-700 ">
-            Discover destinations that speak to your wanderlust. Each journey crafted for unforgettable experiences.
+            Discover the incredible diversity of India. From snow-capped mountains to tropical beaches, experience the magic of our homeland.
           </p>
         </div>
 
@@ -71,11 +94,11 @@ export default function Popular() {
           {/* Responsive Bento Grid */}
           <div className="mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-6 sm:grid-rows-3 lg:grid-rows-3 gap-4 sm:gap-4 h-auto sm:h-[500px] lg:h-[600px] xl:h-[650px]">
-              {packages.map((pkg, index) => (
+              {domesticPackages.map((pkg, index) => (
                 <article
                   key={pkg.key}
                   className={`group relative overflow-hidden bg-white/50 backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] hover:z-10 cursor-pointer rounded-xl sm:rounded-2xl border border-white/20 shadow-lg min-h-[200px] sm:min-h-0 ${
-                    index === 0 || index === 3 ? 'sm:row-span-2' : 'sm:row-span-1'
+                    index === 0 || index === 5 ? 'sm:row-span-2' : 'sm:row-span-1'
                   } ${pkg.position}`}
                   onMouseEnter={() => setHoveredCard(pkg.key)}
                   onMouseLeave={() => setHoveredCard(null)}
@@ -140,7 +163,7 @@ export default function Popular() {
         <div className=" text-center mt-6 sm:mt-6">
           <div className="flex flex-col sm:flex-row gap-3 items-center justify-center md:justify-end w-full mx-auto">
             <button className="inline-flex items-center justify-center rounded-tr-[15px] rounded-bl-[15px] bg-orange-600 px-4 sm:px-5 py-2.5 sm:py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 w-[90%] h-[50px] sm:w-auto">
-              View all destinations <MdKeyboardDoubleArrowRight className="ml-2 text-xl mt-1" size={25}  />
+              View all domestic destinations <MdKeyboardDoubleArrowRight className="ml-2 text-xl mt-1" size={25}  />
             </button>
             
           </div>
