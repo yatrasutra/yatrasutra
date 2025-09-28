@@ -236,20 +236,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-              <div className="flex items-center justify-center gap-2">
-                <span className="text-2xl">⚡</span>
-                <span className="text-sm font-medium">Quick Response</span>
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <span className="text-2xl">🎯</span>
-                <span className="text-sm font-medium">Personalized Service</span>
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <span className="text-2xl">🏆</span>
-                <span className="text-sm font-medium"></span>
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>
