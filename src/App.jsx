@@ -1,7 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
-import About from './pages/About.jsx';
+import SriLanka from './pages/SriLanka.jsx';
 import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
+import About from './pages/About.jsx';
+import Maldives from './pages/Maldives.jsx';
+import Lakshadweep from './pages/Lakshadweep.jsx';
 
 function App() {
   return (
@@ -20,9 +24,13 @@ function App() {
           <div className="pt-20">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/srilanka" element={<SriLanka />} />
+              <Route path="/maldives" element={<Maldives />} />
+              <Route path="/lakshadweep" element={<Lakshadweep />} />
               <Route path="/about" element={<About />} />
             </Routes>
           </div>
+          <Footer />
         </div>
       </div>
     </Router>

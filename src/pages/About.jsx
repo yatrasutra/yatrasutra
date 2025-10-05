@@ -149,7 +149,12 @@ export default function About() {
               ))}
             </div>
           </div>
-          <EnquirySection />
+          {/* Wider Enquiry Form (full-bleed within container) */}
+          <div className="mx-[-1.5rem] sm:mx-[-1.5rem] lg:mx-[-2rem] mb-[50px]">
+            <div className="mx-auto max-w-[100rem]">
+              <EnquirySection />
+            </div>
+          </div>
 
           {/* Enhanced Vision & Mission */}
           <div className="mb-10 mt-[-80px]">
@@ -195,49 +200,7 @@ export default function About() {
           </div>
           
 
-          {/* Enhanced CTA */}
-          <div className="text-center bg-blue-900 rounded-3xl shadow-2xl p-12 text-white">
-            <h2 className="text-3xl lg:text-4xl font-black mb-4">Ready to Begin Your Journey?</h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Let's turn your travel dreams into reality. Get in touch with our experts and start planning your perfect getaway today.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
-              <a
-                href="#contact"
-                className="group inline-flex items-center gap-3 bg-white text-indigo-900 px-8 py-4 rounded-2xl text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-              >
-                <span>Start Planning</span>
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </a>
-              
-              <div className="flex items-center gap-4">
-                <a
-                  href="mailto:info@yatrasutra.com"
-                  className="group p-4 bg-white/20 backdrop-blur-sm text-white rounded-2xl shadow-lg hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
-                  title="Email Us"
-                >
-                  <span className="text-2xl">📧</span>
-                </a>
-                <a
-                  href="https://wa.me/1234567890"
-                  className="group p-4 bg-white/20 backdrop-blur-sm text-white rounded-2xl shadow-lg hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
-                  title="WhatsApp"
-                >
-                  <span className="text-2xl">💬</span>
-                </a>
-                <a
-                  href="tel:+1234567890"
-                  className="group p-4 bg-white/20 backdrop-blur-sm text-white rounded-2xl shadow-lg hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
-                  title="Call Us"
-                >
-                  <span className="text-2xl">📞</span>
-                </a>
-              </div>
-            </div>
-
-            
-          </div>
+        
         </div>
       </section>
     </div>
