@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
+import { MdOutlineKeyboardDoubleArrowRight, MdFilterList } from "react-icons/md";
 
 export default function International() {
   const [packages, setPackages] = useState([]);
@@ -43,33 +43,47 @@ export default function International() {
         </div>
       </div>
 
-      {/* Filters */}
+      {/* Search & Filter */}
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         <div className="bg-white/50 backdrop-blur-lg border border-white/40 rounded-2xl shadow-xl p-4 sm:p-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex items-center gap-3">
             <input
               type="text"
               placeholder="Search by destination..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="px-4 py-3 rounded-lg border border-white/50 bg-white/70 backdrop-blur focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+              className="flex-1 px-4 py-3 rounded-lg border border-white/50 bg-white/70 backdrop-blur focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
             />
-            <select
-              value={filter}
-              onChange={(e) => setFilter(e.target.value)}
-              className="px-4 py-3 rounded-lg border border-white/50 bg-white/70 backdrop-blur focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
-            >
-              <option value="">All Countries</option>
-              {countries.map((country) => (
-                <option key={country} value={country}>
-                  {country}
-                </option>
-              ))}
-            </select>
-           
+            <div className="relative">
+              <select
+                value={filter}
+                onChange={(e) => setFilter(e.target.value)}
+                className="appearance-none px-4 py-3 pr-10 rounded-lg border border-white/50 bg-white/70 backdrop-blur focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm cursor-pointer"
+              >
+                <option value="">All Countries</option>
+                {countries.map((country) => (
+                  <option key={country} value={country}>
+                    {country}
+                  </option>
+                ))}
+              </select>
+              <MdFilterList className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-500 pointer-events-none" size={20} />
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Category Heading */}
+      {filter && (
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-4">
+          <h2 className="text-2xl font-bold text-indigo-900">
+            {filter} <span className="text-orange-600">Packages</span>
+          </h2>
+          <p className="text-slate-600 mt-1">
+            {filteredPackages.length} package{filteredPackages.length !== 1 ? 's' : ''} found
+          </p>
+        </div>
+      )}
 
       {/* Grid */}
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
