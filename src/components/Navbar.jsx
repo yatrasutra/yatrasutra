@@ -71,7 +71,7 @@ export default function Navbar() {
 
         {/* Mobile dropdown */}
         {open && (
-          <div className="mx-4 mt-2 rounded-2xl border border-white/20 bg-white/30 p-4 text-sm text-slate-800 shadow-lg backdrop-blur-md sm:hidden">
+          <div className="mx-2 mt-2 rounded-2xl border border-white/20 bg-white/30 p-4 text-sm text-slate-800 shadow-lg backdrop-blur-md sm:hidden">
             <Link to="/about" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">About us</Link>
             <Link to="/international" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Packages</Link>
             <Link to="/srilanka" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Sri Lanka</Link>
