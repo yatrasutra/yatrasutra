@@ -60,7 +60,7 @@ export default function International() {
                 onChange={(e) => setFilter(e.target.value)}
                 className="appearance-none px-4 py-3 pr-10 rounded-lg border border-white/50 bg-white/70 backdrop-blur focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm cursor-pointer"
               >
-                <option value="">All Countries</option>
+                <option value=""></option>
                 {countries.map((country) => (
                   <option key={country} value={country}>
                     {country}
