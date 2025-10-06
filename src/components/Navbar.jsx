@@ -16,7 +16,7 @@ export default function Navbar() {
           {/* Desktop links */}
           <div className="hidden items-center gap-8 text-sm font-medium text-slate-800/90 sm:flex">
             <Link to="/about" className="transition hover:text-slate-900">About us</Link>
-            <Link to="/#itineraries" className="transition hover:text-slate-900">Packages</Link>
+            <Link to="/international" className="transition hover:text-slate-900">Packages</Link>
             <Link to="/srilanka" className="transition hover:text-slate-900">Sri Lanka</Link>
             <Link to="/maldives" className="transition hover:text-slate-900">Maldives</Link>
             <Link to="/lakshadweep" className="transition hover:text-slate-900">Lakshadweep</Link>
@@ -73,7 +73,7 @@ export default function Navbar() {
         {open && (
           <div className="mx-4 mt-2 rounded-2xl border border-white/20 bg-white/30 p-4 text-sm text-slate-800 shadow-lg backdrop-blur-md sm:hidden">
             <Link to="/about" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">About us</Link>
-            <Link to="/#itineraries" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Packages</Link>
+            <Link to="/international" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Packages</Link>
             <Link to="/srilanka" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Sri Lanka</Link>
             <Link to="/maldives" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Maldives</Link>
             <Link to="/lakshadweep" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Lakshadweep</Link>
