@@ -7,7 +7,7 @@ export default function International() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("");
 
-  const countries = ["Maldives", "Sri Lanka", "Thailand", "Indonesia", "Malaysia", "Vietnam", "Dubai"];
+  const countries = ["Maldives", "Srilanka", "Thailand", "Indonesia", "Malaysia", "Vietnam", "Dubai", "Bali"];
 
   useEffect(() => {
     axios
@@ -44,7 +44,7 @@ export default function International() {
       </div>
 
       {/* Search & Filter */}
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         <div className="bg-white/50 backdrop-blur-lg border border-white/40 rounded-2xl shadow-xl p-4 sm:p-6">
           <div className="flex items-center gap-3">
             <input
@@ -52,13 +52,13 @@ export default function International() {
               placeholder="Search by destination..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="flex-1 px-4 py-3 rounded-lg border border-white/50 bg-white/70 backdrop-blur focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+              className="flex-1 px-4 py-3 rounded-lg border border-white/50 bg-white/70 backdrop-blur focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm min-w-0"
             />
-            <div className="relative">
+            <div className="relative flex-shrink-0">
               <select
                 value={filter}
                 onChange={(e) => setFilter(e.target.value)}
-                className="appearance-none px-4 py-3 pr-10 rounded-lg border border-white/50 bg-white/70 backdrop-blur focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm cursor-pointer"
+                className="appearance-none px-3 py-3 pr-10 rounded-lg border border-white/50 bg-white/70 backdrop-blur focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm cursor-pointer w-12 h-12"
               >
                 <option value=""></option>
                 {countries.map((country) => (
