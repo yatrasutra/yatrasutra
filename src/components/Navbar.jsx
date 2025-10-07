@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [packagesOpen, setPackagesOpen] = useState(false);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -16,7 +17,23 @@ export default function Navbar() {
           {/* Desktop links */}
           <div className="hidden items-center gap-8 text-sm font-medium text-slate-800/90 sm:flex">
             <Link to="/about" className="transition hover:text-slate-900">About us</Link>
-            <Link to="/international" className="transition hover:text-slate-900">Packages</Link>
+            <div className="relative">
+              <button
+                onClick={() => setPackagesOpen(!packagesOpen)}
+                className="flex items-center gap-1 transition hover:text-slate-900"
+              >
+                Packages
+                <svg className={`h-4 w-4 transition-transform ${packagesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {packagesOpen && (
+                <div className="absolute top-full left-0 mt-7 w-48 rounded-lg border border-white/20 bg-white/30 py-2 shadow-lg backdrop-blur-md">
+                  <Link to="/international" className="block px-4 py-2 text-sm transition hover:bg-white/50">International</Link>
+                  <Link to="/domestic" className="block px-4 py-2 text-sm transition hover:bg-white/50">Domestic</Link>
+                </div>
+              )}
+            </div>
             <Link to="/srilanka" className="transition hover:text-slate-900">Sri Lanka</Link>
             <Link to="/maldives" className="transition hover:text-slate-900">Maldives</Link>
             <Link to="/lakshadweep" className="transition hover:text-slate-900">Lakshadweep</Link>
@@ -73,7 +90,23 @@ export default function Navbar() {
         {open && (
           <div className="mx-2 mt-2 rounded-2xl border border-white/20 bg-white/30 p-4 text-sm text-slate-800 shadow-lg backdrop-blur-md sm:hidden">
             <Link to="/about" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">About us</Link>
-            <Link to="/international" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Packages</Link>
+            <div className="mt-1">
+              <button
+                onClick={() => setPackagesOpen(!packagesOpen)}
+                className="flex w-full items-center justify-between rounded-lg px-3 py-2 hover:bg-white/50"
+              >
+                Packages
+                <svg className={`h-4 w-4 transition-transform ${packagesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {packagesOpen && (
+                <div className="ml-4 mt-1 space-y-1">
+                  <Link to="/international" className="block rounded-lg px-3 py-2 hover:bg-white/50">International</Link>
+                  <Link to="/domestic" className="block rounded-lg px-3 py-2 hover:bg-white/50">Domestic</Link>
+                </div>
+              )}
+            </div>
             <Link to="/srilanka" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Sri Lanka</Link>
             <Link to="/maldives" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Maldives</Link>
             <Link to="/lakshadweep" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Lakshadweep</Link>

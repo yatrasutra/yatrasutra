@@ -7,6 +7,7 @@ import About from './pages/About.jsx';
 import Maldives from './pages/Maldives.jsx';
 import Lakshadweep from './pages/Lakshadweep.jsx';
 import International from './pages/International.jsx';
+import Domestic from './pages/Domestic.jsx';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="/lakshadweep" element={<Lakshadweep />} />
               <Route path="/about" element={<About />} />
               <Route path="/international" element={<International />} />
+              <Route path="/domestic" element={<Domestic />} />
             </Routes>
           </div>
           <Footer />

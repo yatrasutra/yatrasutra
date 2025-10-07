@@ -2,18 +2,18 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { MdOutlineKeyboardDoubleArrowRight, MdFilterList } from "react-icons/md";
 
-export default function International() {
+export default function Domestic() {
   const [packages, setPackages] = useState([]);
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("");
   const [selectedPackage, setSelectedPackage] = useState(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const countries = ["Maldives", "Srilanka", "Thailand", "Indonesia", "Malaysia", "Vietnam", "Dubai", "Bali"];
+  const countries = ["Lakshadweep", "Andaman & Nicobar Islands", "Kerala", "Meghalaya", "Himachal Pradesh", "Ladakh", "Sikkim", "Kashmir", "Rajasthan", "Hyderabad", "Odisha"];
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/api/international`)
+      .get(`${import.meta.env.VITE_API_URL}/api/domestic`)
       .then((res) => setPackages(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -47,15 +47,15 @@ export default function International() {
         <div className="mx-auto max-w-7xl mt-[-30px] md:mt-0 px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24">
           <div className="rounded-3xl border border-white/40 bg-white/70 backdrop-blur-xl shadow-2xl p-6 sm:p-10">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-blue-900">
-              International <span className="text-orange-600">Tour Packages</span>
+              Domestic <span className="text-orange-600">Tour Packages</span>
             </h1>
             <p className="mt-3 sm:mt-4 max-w-3xl text-slate-700">
-              Explore curated experiences across the world with transparent pricing, premium support, and flexible customization.
+              Discover the beauty of India with our curated domestic packages featuring transparent pricing, premium support, and flexible customization.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <span className="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-xs font-semibold text-orange-700">Best Sellers</span>
               <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">Family Friendly</span>
-              <span className="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">Honeymoon</span>
+              <span className="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">Adventure</span>
             </div>
           </div>
         </div>
