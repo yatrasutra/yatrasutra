@@ -1,7 +1,14 @@
 import React from 'react';
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 
 export default function Maldives() {
+  const navigate = useNavigate();
+
+  const handleAllPackages = () => {
+    navigate('/international?category=Maldives');
+  };
+
   return (
     <section className="w-full overflow-hidden relative">
       {/* Hero */}
@@ -272,7 +279,10 @@ export default function Maldives() {
                 <button className="inline-flex items-center gap-2 rounded-tr-lg rounded-bl-lg bg-orange-600 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-orange-700">
                   Enquire Now
                 </button>
-                <button className="inline-flex items-center gap-2 rounded-tr-lg rounded-bl-lg border border-orange-200 bg-white/80 px-5 py-3 text-sm font-semibold text-orange-700 shadow-sm backdrop-blur transition hover:bg-white">
+                <button 
+                  onClick={handleAllPackages}
+                  className="inline-flex items-center gap-2 rounded-tr-lg rounded-bl-lg border border-orange-200 bg-white/80 px-5 py-3 text-sm font-semibold text-orange-700 shadow-sm backdrop-blur transition hover:bg-white"
+                >
                   All Packages
                   <MdOutlineKeyboardDoubleArrowRight className="ml-2 text-xl mt-1" size={25} />
                 </button>

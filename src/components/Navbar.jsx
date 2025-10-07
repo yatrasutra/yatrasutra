@@ -28,7 +28,7 @@ export default function Navbar() {
                 </svg>
               </button>
               {packagesOpen && (
-                <div className="absolute top-full left-0 mt-7 w-48 rounded-lg border border-white/20 bg-white/30 py-2 shadow-lg backdrop-blur-md">
+                <div className="absolute top-full left-0 mt-7 w-48 rounded-lg border border-white/20 bg-white/90 py-2 shadow-lg backdrop-blur-md">
                   <Link to="/international" className="block px-4 py-2 text-sm transition hover:bg-white/50">International</Link>
                   <Link to="/domestic" className="block px-4 py-2 text-sm transition hover:bg-white/50">Domestic</Link>
                 </div>

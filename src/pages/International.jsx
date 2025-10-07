@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { MdOutlineKeyboardDoubleArrowRight, MdFilterList } from "react-icons/md";
+import { useSearchParams } from "react-router-dom";
 
 export default function International() {
   const [packages, setPackages] = useState([]);
@@ -8,8 +9,10 @@ export default function International() {
   const [filter, setFilter] = useState("");
   const [selectedPackage, setSelectedPackage] = useState(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [searchParams] = useSearchParams();
 
-  const countries = ["Maldives", "Srilanka", "Thailand", "Indonesia", "Malaysia", "Vietnam", "Dubai", "Bali"];
+  const countries = ["Maldives", "Sri Lanka", "Thailand", "Indonesia", "Malaysia", "Vietnam", "Dubai", "Bali"];
 
   useEffect(() => {
     axios
@@ -17,6 +20,14 @@ export default function International() {
       .then((res) => setPackages(res.data))
       .catch((err) => console.error(err));
   }, []);
+
+  // Handle URL parameter for category filter
+  useEffect(() => {
+    const category = searchParams.get('category');
+    if (category && countries.includes(category)) {
+      setFilter(category);
+    }
+  }, [searchParams]);
 
   const filteredPackages = packages.filter((pkg) => {
     const matchesSearch = pkg.destination.toLowerCase().includes(search.toLowerCase());
@@ -26,6 +37,7 @@ export default function International() {
 
   const handleBookNow = (pkg) => {
     setSelectedPackage(pkg);
+    setCurrentImageIndex(0);
     setIsDrawerOpen(true);
   };
 
@@ -38,7 +50,40 @@ export default function International() {
   const closeDrawer = () => {
     setIsDrawerOpen(false);
     setSelectedPackage(null);
+    setCurrentImageIndex(0);
   };
+
+  // Get all images for the selected package
+  const getPackageImages = (pkg) => {
+    const images = [pkg.image];
+    if (pkg.image2) images.push(pkg.image2);
+    if (pkg.image3) images.push(pkg.image3);
+    return images;
+  };
+
+  const nextImage = () => {
+    const images = getPackageImages(selectedPackage);
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    const images = getPackageImages(selectedPackage);
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  // Auto-swipe functionality
+  useEffect(() => {
+    if (!isDrawerOpen || !selectedPackage) return;
+
+    const images = getPackageImages(selectedPackage);
+    if (images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 4000); // Auto-swipe every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [isDrawerOpen, selectedPackage]);
 
   return (
     <section className="w-full overflow-hidden relative">
@@ -168,14 +213,51 @@ export default function International() {
               
               {/* Scrollable Content */}
               <div className="flex-1 overflow-y-auto px-6 pb-4">
-                {/* Mobile Image */}
+                {/* Mobile Image Carousel */}
                 <div className="relative h-48 w-full rounded-xl overflow-hidden mb-6">
                   <img 
-                    src={selectedPackage.image} 
+                    src={getPackageImages(selectedPackage)[currentImageIndex]} 
                     alt={selectedPackage.destination} 
                     className="h-full w-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  
+                  {/* Navigation Arrows */}
+                  {getPackageImages(selectedPackage).length > 1 && (
+                    <>
+                      <button
+                        onClick={prevImage}
+                        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 transition-colors"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                      </button>
+                      <button
+                        onClick={nextImage}
+                        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 transition-colors"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    </>
+                  )}
+                  
+                  {/* Image Indicators */}
+                  {getPackageImages(selectedPackage).length > 1 && (
+                    <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
+                      {getPackageImages(selectedPackage).map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`w-2 h-2 rounded-full transition-colors ${
+                            index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Mobile Header */}
@@ -264,13 +346,50 @@ export default function International() {
 
                 {/* Image - Right Side (Desktop) */}
                 <div className="lg:flex-1 lg:relative">
-                  <div className="h-full w-full rounded-r-3xl overflow-hidden">
+                  <div className="h-full w-full rounded-r-3xl overflow-hidden relative">
                     <img 
-                      src={selectedPackage.image} 
+                      src={getPackageImages(selectedPackage)[currentImageIndex]} 
                       alt={selectedPackage.destination} 
                       className="h-full w-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                    
+                    {/* Navigation Arrows */}
+                    {getPackageImages(selectedPackage).length > 1 && (
+                      <>
+                        <button
+                          onClick={prevImage}
+                          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full p-3 transition-colors"
+                        >
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                          </svg>
+                        </button>
+                        <button
+                          onClick={nextImage}
+                          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full p-3 transition-colors"
+                        >
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </button>
+                      </>
+                    )}
+                    
+                    {/* Image Indicators */}
+                    {getPackageImages(selectedPackage).length > 1 && (
+                      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                        {getPackageImages(selectedPackage).map((_, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setCurrentImageIndex(index)}
+                            className={`w-3 h-3 rounded-full transition-colors ${
+                              index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
