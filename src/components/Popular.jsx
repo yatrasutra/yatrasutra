@@ -50,7 +50,7 @@ export default function Popular() {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   return (
-    <section className="w-full mt-[-80px] md:mt-[-30px] overflow-hidden relative">
+    <section className="w-full mt-[-80px] md:mt-[-90px] overflow-hidden relative">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         {/* Header */}
         <div className="mb-8 sm:mb-12 text-start sm:text-left">

@@ -11,7 +11,7 @@ export default function Navbar() {
         <nav className="mt-4 flex items-center justify-between rounded-2xl border border-white/20 bg-white/20 px-4 py-3 shadow-lg backdrop-blur-md">
           {/* Brand */}
           <Link to="/" className="flex items-center gap-2">
-            <span className="font-melody text-4xl text-orange-600">yatrasutra</span>
+            <span className="font-melody text-2xl text-orange-600">yatrasutra</span>
           </Link>
 
           {/* Desktop links */}
