@@ -249,9 +249,17 @@ export default function Domestic() {
           <div className="fixed bottom-0 left-0 right-0 z-50 bg-white rounded-t-3xl shadow-2xl transform transition-transform duration-300 ease-out lg:bottom-auto lg:top-1/2 lg:left-1/2 lg:right-auto lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 lg:rounded-3xl lg:max-w-4xl lg:w-full lg:max-h-[90vh]">
             {/* Mobile Layout */}
             <div className="flex flex-col h-[80vh] lg:hidden">
-              {/* Handle */}
-              <div className="flex justify-center py-4">
+              {/* Handle and Close Button */}
+              <div className="flex justify-between items-center py-4 px-4">
                 <div className="w-12 h-1 bg-gray-300 rounded-full"></div>
+                <button 
+                  onClick={closeDrawer}
+                  className="text-gray-500 hover:text-gray-700 focus:outline-none"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
               </div>
               
               {/* Scrollable Content */}
