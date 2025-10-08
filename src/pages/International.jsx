@@ -38,7 +38,7 @@ export default function International() {
 
   const filteredPackages = packages.filter((pkg) => {
     const matchesSearch = pkg.destination.toLowerCase().includes(search.toLowerCase());
-    const matchesFilter = filter ? pkg.destination.toLowerCase().includes(filter.toLowerCase()) : true;
+    const matchesFilter = filter ? pkg.category?.toLowerCase().includes(filter.toLowerCase()) : true;
     return matchesSearch && matchesFilter;
   });
 
