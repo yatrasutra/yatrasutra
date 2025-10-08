@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 
 export default function International() {
   const [packages, setPackages] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("");
   const [selectedPackage, setSelectedPackage] = useState(null);
@@ -17,8 +18,14 @@ export default function International() {
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_API_URL}/api/international`)
-      .then((res) => setPackages(res.data))
-      .catch((err) => console.error(err));
+      .then((res) => {
+        setPackages(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
   }, []);
 
   // Handle URL parameter for category filter
@@ -85,6 +92,32 @@ export default function International() {
     return () => clearInterval(interval);
   }, [isDrawerOpen, selectedPackage]);
 
+  // Loader component
+  const Loader = () => (
+    <div className="flex justify-center items-center h-64 w-full">
+      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-600"></div>
+    </div>
+  );
+
+  // Skeleton card component for loading state
+  const SkeletonCard = () => (
+    <div className="group relative bg-white/50 backdrop-blur-lg border border-white/40 rounded-2xl shadow-xl overflow-hidden transition-transform duration-300 hover:-translate-y-1 flex flex-col h-full animate-pulse">
+      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 opacity-70"></div>
+      <div className="relative h-44 w-full overflow-hidden bg-gray-200"></div>
+      <div className="flex flex-col flex-grow p-6">
+        <div className="flex-grow">
+          <div className="h-6 bg-gray-200 rounded w-3/4 mb-2"></div>
+          <div className="h-4 bg-gray-200 rounded w-full mb-1"></div>
+          <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+        </div>
+        <div className="mt-5 flex items-center justify-between">
+          <div className="h-8 bg-gray-200 rounded w-16"></div>
+          <div className="h-10 bg-gray-200 rounded-tr-lg rounded-bl-lg w-32"></div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <section className="w-full overflow-hidden relative">
       {/* Hero */}
@@ -150,47 +183,57 @@ export default function International() {
 
       {/* Grid */}
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {filteredPackages.map((pkg) => (
-            <div
-              key={pkg.$id}
-              className="group relative bg-white/50 backdrop-blur-lg border border-white/40 rounded-2xl shadow-xl overflow-hidden transition-transform duration-300 hover:-translate-y-1"
-            >
-              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 opacity-70"></div>
-              {/* Image */}
-              <div className="relative h-44 w-full overflow-hidden">
-                <img src={pkg.image} alt={pkg.destination} className="h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/30 to-transparent" />
-                <span className="absolute top-3 left-3 inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-slate-700 shadow">
-                  {pkg.period}
-                </span>
-                <span className="absolute top-3 right-3 inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-1 text-[11px] font-semibold text-yellow-700 shadow">
-                  {pkg.ratings} ★
-                </span>
-              </div>
+        {loading ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {[...Array(6)].map((_, index) => (
+              <SkeletonCard key={index} />
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {filteredPackages.map((pkg) => (
+              <div
+                key={pkg.$id}
+                className="group relative bg-white/50 backdrop-blur-lg border border-white/40 rounded-2xl shadow-xl overflow-hidden transition-transform duration-300 hover:-translate-y-1 flex flex-col h-full"
+              >
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 opacity-70"></div>
+                {/* Image */}
+                <div className="relative h-44 w-full overflow-hidden">
+                  <img src={pkg.image} alt={pkg.destination} className="h-full w-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/30 to-transparent" />
+                  <span className="absolute top-3 left-3 inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-slate-700 shadow">
+                    {pkg.period}
+                  </span>
+                  <span className="absolute top-3 right-3 inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-1 text-[11px] font-semibold text-yellow-700 shadow">
+                    {pkg.ratings} ★
+                  </span>
+                </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <h2 className="text-xl font-bold text-indigo-900">{pkg.destination}</h2>
-                <p className="text-sm text-slate-600 mt-1 line-clamp-1">{pkg.subtext || 'Handpicked itinerary with hotels, transfers, and guided experiences.'}</p>
-                
-                <div className="mt-5 flex items-center justify-between">
-                  <p className="text-2xl font-bold text-orange-600">₹{pkg.price}</p>
-                  <button 
-                    onClick={() => handleBookNow(pkg)}
-                    className="inline-flex items-center gap-2 rounded-tr-lg rounded-bl-lg bg-orange-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:bg-orange-700"
-                  >
-                    Book Now <MdOutlineKeyboardDoubleArrowRight size={18} />
-                  </button>
+                {/* Content */}
+                <div className="flex flex-col flex-grow p-6">
+                  <div className="flex-grow">
+                    <h2 className="text-xl font-bold text-indigo-900">{pkg.destination}</h2>
+                    <p className="text-sm text-slate-600 mt-1 line-clamp-2">{pkg.subtext || 'Handpicked itinerary with hotels, transfers, and guided experiences.'}</p>
+                  </div>
+                  
+                  <div className="mt-5 flex items-center justify-between">
+                    <p className="text-2xl font-bold text-orange-600">₹{pkg.price}</p>
+                    <button 
+                      onClick={() => handleBookNow(pkg)}
+                      className="inline-flex items-center gap-2 rounded-tr-lg rounded-bl-lg bg-orange-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:bg-orange-700"
+                    >
+                      Book Now <MdOutlineKeyboardDoubleArrowRight size={18} />
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
 
-          {filteredPackages.length === 0 && (
-            <p className="text-center text-gray-500 col-span-full">No packages found.</p>
-          )}
-        </div>
+            {filteredPackages.length === 0 && !loading && (
+              <p className="text-center text-gray-500 col-span-full">No packages found.</p>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Bottom Drawer */}
