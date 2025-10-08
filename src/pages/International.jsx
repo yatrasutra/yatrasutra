@@ -320,7 +320,7 @@ export default function International() {
 
                   <div>
                     <h3 className="text-lg font-semibold text-slate-900 mb-2">Description</h3>
-                    <p className="text-slate-700">{selectedPackage.description}</p>
+                    <p className="text-slate-700 whitespace-pre-wrap">{selectedPackage.description}</p>
                   </div>
 
                   <div>
@@ -372,7 +372,7 @@ export default function International() {
 
                     <div>
                       <h3 className="text-lg font-semibold text-slate-900 mb-2">Description</h3>
-                      <p className="text-slate-700">{selectedPackage.description}</p>
+                      <p className="whitespace-pre-wrap text-slate-700">{selectedPackage.description}</p>
                     </div>
 
                     <div>
