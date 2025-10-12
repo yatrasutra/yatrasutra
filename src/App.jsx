@@ -8,6 +8,8 @@ import Maldives from './pages/Maldives.jsx';
 import Lakshadweep from './pages/Lakshadweep.jsx';
 import International from './pages/International.jsx';
 import Domestic from './pages/Domestic.jsx';
+import Blog from "./pages/Blog";
+import BlogDetails from './pages/blogDetails.jsx';
 
 function App() {
   return (
@@ -30,8 +32,10 @@ function App() {
               <Route path="/maldives" element={<Maldives />} />
               <Route path="/lakshadweep" element={<Lakshadweep />} />
               <Route path="/about" element={<About />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="/international" element={<International />} />
               <Route path="/domestic" element={<Domestic />} />
+              <Route path="/blog/:id" element={<BlogDetails />} />
             </Routes>
           </div>
           <Footer />
