@@ -330,10 +330,14 @@ export default function International() {
                     <h3 className="text-lg font-semibold text-slate-900 mb-2">Description</h3>
                     <p className="text-slate-700 whitespace-pre-wrap">{selectedPackage.description}</p>
                   </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900 mb-2">Itneraries</h3>
+                    <p className="text-slate-700 whitespace-pre-wrap">{selectedPackage.itineraries}</p>
+                  </div>
 
                   <div>
                     <h3 className="text-lg font-semibold text-slate-900 mb-2">Inclusions</h3>
-                    <p className="text-slate-700">{selectedPackage.inclusions}</p>
+                    <p className="text-slate-700 whitespace-pre-wrap">{selectedPackage.inclusions}</p>
                   </div>
 
                   <div>

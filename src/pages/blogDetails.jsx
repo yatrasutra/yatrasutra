@@ -87,7 +87,7 @@ export default function BlogDetails() {
                   key={idx}
                   className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100"
                 >
-                  <p className="text-slate-700 whitespace-pre-line leading-relaxed text-base sm:text-lg first-letter:text-5xl first-letter:font-bold first-letter:text-orange-600 first-letter:float-left first-letter:mr-3 first-letter:mt-1">
+                  <p className="text-slate-700 whitespace-pre-wrap leading-relaxed text-base sm:text-lg ">
                     {block.value}
                   </p>
                 </div>

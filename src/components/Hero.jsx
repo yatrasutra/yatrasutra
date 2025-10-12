@@ -64,14 +64,14 @@ export default function Hero() {
               />
               
               {/* Floating Badge - Responsive */}
-              <div className="absolute bottom-[-80px] sm:bottom-[-80px] md:bottom-[-100px] md:left-2/3 left-2/3 floating-badge bg-white/90 backdrop-blur-md border border-white/40 rounded-2xl px-3 py-2 sm:px-4 sm:py-3 shadow-xl w-[75%] sm:w-auto max-w-[160px] sm:max-w-none" 
+              <div className="absolute bottom-[-80px] sm:bottom-[-80px] md:bottom-[-100px] md:left-[450px] left-2/3 floating-badge bg-white/90 backdrop-blur-md border border-white/40 rounded-2xl px-3 py-2 sm:px-4 sm:py-3 shadow-xl w-[75%] sm:w-[45%] max-w-[200px] sm:max-w-none" 
                    style={{ transform: 'translate(-50%, 0) rotate(-5deg)' }}>
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl md:text-4xl text-orange-600 mt-1 leading-tight" style={{ fontFamily: 'Melody' }}>
+                  <div className="text-start text-2xl sm:text-2xl md:text-4xl text-orange-600 mt-1 leading-tight" style={{ fontFamily: 'Melody' }}>
                     YATRASUTRA
                   </div>
-                  <span className="text-[10px] sm:text-xs font-semibold text-slate-600 uppercase tracking-wider block mt-0.5">
-                    Gateway to adventure
+                  <span className="text-start text-[12px] sm:text-base text-blue-900 uppercase tracking-wider block mt-0.5" style={{ fontFamily: 'Melody' }}>
+                    We handle the chaos,You just pack
                   </span>
                 </div>
               </div>

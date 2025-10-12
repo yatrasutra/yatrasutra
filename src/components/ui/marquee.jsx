@@ -1,56 +1,80 @@
 import { cn } from "@/lib/utils";
 
-// Travel testimonials data matching your app's travel theme
 const testimonials = [
   {
-    name: "Priya Sharma",
-    location: "Mumbai, India",
-    body: "YatraSutra made our Goa trip absolutely perfect! Every detail was handled beautifully.",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=fac",
+    name: "Samridhi Sabharwal",
+    location: "New Delhi",
+    body: "Amazing, well trusted, good service 👍👍 They took care of all the details.",
+    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebbd1c0030f13b2ec0/view?project=68e3521900146ef84822&mode=user",
     rating: 5,
-    destination: "Goa"
+    destination: "Agatti Island, Lakshadweep"
   },
   {
-    name: "Rajesh Kumar",
-    location: "Delhi, India",
-    body: "From Kerala backwaters to hill stations - they curated memories we'll treasure forever.",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face",
-    rating: 5,
-    destination: "Kerala"
-  },
-  {
-    name: "Anita Patel",
-    location: "Ahmedabad, India",
-    body: "The Rajasthan itinerary was magical! Every palace, every sunset perfectly planned.",
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face",
-    rating: 5,
-    destination: "Rajasthan"
-  },
-  {
-    name: "Vikram Singh",
-    location: "Bangalore, India",
-    body: "Himachal Pradesh adventure exceeded expectations. They handle chaos, we just packed!",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face",
-    rating: 5,
-    destination: "Himachal"
-  },
-  {
-    name: "Meera Iyer",
-    location: "Chennai, India",
-    body: "Tamil Nadu temple tour was spiritually enriching and flawlessly organized.",
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=64&h=64&fit=crop&crop=face",
-    rating: 5,
-    destination: "Tamil Nadu"
-  },
-  {
-    name: "Arjun Reddy",
-    location: "Hyderabad, India",
-    body: "Kashmir valley trip was like a dream. Every moment was perfectly curated!",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&crop=face",
+    name: "Ananthakrishnan S",
+    location: "Kochi, Kerala",
+    body: "Had an amazing trip to Kashmir. Everything was perfectly organized and the team made the journey comfortable, memorable, and truly unforgettable.",
+    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebbdc00036a8fdebe8/view?project=68e3521900146ef84822&mode=user",
     rating: 5,
     destination: "Kashmir"
+  },
+  {
+    name: "Roushan Raj Singh",
+    location: "Bihar",
+    body: "We went to Lakshadweep and had a nice experience. The trip was simple, well arranged, and we enjoyed the island without any hassle.",
+    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebbc480010886ee4a6/view?project=68e3521900146ef84822&mode=user",
+    rating: 5,
+    destination: "Lakshadweep"
+  },
+  {
+    name: "Paul Hongkung",
+    location: "Panjabari, Assam",
+    body: "We visited Lakshadweep as a family and had a really good experience. Everything went smoothly, and the team was responsive. A peaceful break with beautiful views and simple local food.",
+    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebbe6100256133155c/view?project=68e3521900146ef84822&mode=user",
+    rating: 5,
+    destination: "Lakshadweep"
+  },
+  {
+    name: "Alokesh Bhattacharjee",
+    location: "Assam, India",
+    body: "We were a group of 8 in Lakshadweep, and the trip was amazing! Everything was perfectly organized, and the team was very helpful. Highly recommended!",
+    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebbea1002d842d04af/view?project=68e3521900146ef84822&mode=user",
+    rating: 5,
+    destination: "Lakshadweep"
+  },
+  {
+    name: "Jibesh Chakraborty",
+    location: "Guwahati, Assam",
+    body: "My family trip to Agatti, Lakshadweep was excellent. The resort, food, and water activities were amazing. A very hassle-free journey with great hospitality.",
+    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebc025002b3de8c4f0/view?project=68e3521900146ef84822&mode=user",
+    rating: 5,
+    destination: "Agatti, Lakshadweep"
+  },
+  {
+    name: "Adv. Aparna Wagle",
+    location: "Mumbai, Maharashtra",
+    body: "Our Maldives anniversary trip was curated beautifully by Yatrasutra. Every detail, from the resort to decorations, made our special day amazing. Thank you!",
+    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebbf8000161286119f/view?project=68e3521900146ef84822&mode=user",
+    rating: 5,
+    destination: "Maldives"
+  },
+  {
+    name: "Delmi Vadakkan",
+    location: "Ireland",
+    body: "Had a great experience in Malaysia. Yatrasutra organized everything perfectly, allowing us to enjoy every moment stress-free.",
+    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebbfcc00382e381063/view?project=68e3521900146ef84822&mode=user",
+    rating: 5,
+    destination: "Malaysia"
+  },
+  {
+    name: "Sandeep D",
+    location: "Karnataka",
+    body: "We had a wonderful holiday in Lakshadweep! Yatrasutra Holidays provided outstanding service, and the resort staff were extremely polite and friendly. Highly recommended!",
+    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebbffd0037a0bce1cf/view?project=68e3521900146ef84822&mode=user",
+    rating: 5,
+    destination: "Agatti Island, Lakshadweep"
   }
 ];
+
 
 // Testimonial Card Component
 const TestimonialCard = ({ img, name, location, body, rating, destination }) => {
@@ -59,7 +83,7 @@ const TestimonialCard = ({ img, name, location, body, rating, destination }) => 
       {/* Header with avatar and info */}
       <div className="flex flex-row items-center gap-3 mb-3">
         <img 
-          className="rounded-full ring-2 ring-orange-500/30" 
+          className="rounded-full ring-2 ring-orange-500/30 object-cover w-10 h-10 flex-shrink-0" 
           width="40" 
           height="40" 
           alt={name}

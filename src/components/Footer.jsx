@@ -8,6 +8,9 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="font-melody text-4xl text-orange-600">yatrasutra</div>
+            <p className="mt-3 text-xs font-bold text-blue-900 max-w-xs">
+              We handle the chaos - You just pack
+            </p>
             <p className="mt-3 text-sm text-slate-700 max-w-xs">
               Curating premium island and beach journeys across Lakshadweep, Maldives, and Sri Lanka.
             </p>
