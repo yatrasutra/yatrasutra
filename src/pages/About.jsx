@@ -59,12 +59,7 @@ export default function About() {
                   <span className="font-semibold text-blue-700"> Sri Lanka's cultural treasures</span>. Each destination represents a chapter in our story of excellence.
                 </p>
 
-                <p className="text-lg text-slate-600 leading-relaxed">
-                  We believe that luxury isn't just about opulent accommodations — it's about the seamless fusion of 
-                  <span className="font-semibold text-orange-600"> authentic cultural immersion</span>, 
-                  <span className="font-semibold text-orange-600"> personalized attention</span>, and 
-                  <span className="font-semibold text-orange-600"> unforgettable moments</span> that money simply cannot buy elsewhere.
-                </p>
+                
               </div>
 
               <div className="flex flex-wrap gap-4 pt-4">

@@ -19,14 +19,14 @@ const packages = [
   },
   { key: 'malaysia', 
     name: 'Malaysia', 
-    image: 'https://i.pinimg.com/736x/bc/c2/b2/bcc2b2f9b8f90df69621a9b530041151.jpg',
+    image: 'https://i.pinimg.com/1200x/c9/75/77/c97577f3302c0f994e5de1007bfd12ed.jpg',
     description: 'Truly Asia experience',
     position: 'md:col-span-1 md:row-span-1'
   },
    { 
     key: 'maldives', 
     name: 'Maldives', 
-    image: 'https://i.pinimg.com/1200x/be/04/3e/be043ea1eebfc926a7881918acadcba4.jpg',
+    image: 'https://i.pinimg.com/736x/9e/ea/8a/9eea8a8d5160ed40e8b55000a401f92a.jpg',
     description: 'Paradise on Earth',
     position: 'md:col-span-2 md:row-span-2'
   },
