@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { FaInstagram, FaWhatsapp, FaPhone, FaEnvelope } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp, FaPhone, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
+
 
 const EnquirySection = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -27,7 +28,7 @@ const EnquirySection = () => {
     },
     {
       name: "Phone",
-      icon: <FaPhone className="w-6 h-6" />,
+      icon: <FaPhoneAlt className="w-6 h-6" />,
       href: "tel:+91 81296 67933",
       color: "text-blue-600",
       bgColor: "bg-gradient-to-r from-blue-100 to-cyan-100",
