@@ -32,8 +32,7 @@ export default function Footer() {
             <h4 className="text-slate-900 font-semibold mb-3">Contact</h4>
             <ul className="space-y-2 text-sm text-slate-700">
               <li><a href="mailto:info@yatrasutra.com" className="hover:text-slate-900 transition">info@yatrasutra.com</a></li>
-              <li><a href="tel:+1234567890" className="hover:text-slate-900 transition">+91 12345 67890</a></li>
-              <li><a href="#contact" className="hover:text-slate-900 transition">Contact Form</a></li>
+              <li><a href="tel:+1234567890" className="hover:text-slate-900 transition">+91 81296 67933</a></li>
             </ul>
           </div>
 
