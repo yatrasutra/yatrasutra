@@ -1,5 +1,13 @@
 
 export default function Hero() {
+  const handleDestinationsClick = (e) => {
+    e.preventDefault();
+    const popularSection = document.getElementById('popular-destinations');
+    if (popularSection) {
+      popularSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="w-full overflow-hidden relative">
       <style>{`
@@ -45,7 +53,8 @@ export default function Hero() {
                 Get Started
               </a>
               <a
-                href="#explore"
+                href="#"
+                onClick={handleDestinationsClick}
                 className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-blue-900 px-5 py-3 text-sm font-semibold text-white shadow-sm backdrop-blur-sm transition hover:bg-indigo-700 flex-1 max-w-[140px]"
               >
                 Destinations
