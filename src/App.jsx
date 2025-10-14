@@ -12,6 +12,7 @@ import International from './pages/International.jsx';
 import Domestic from './pages/Domestic.jsx';
 import Blog from "./pages/Blog";
 import BlogDetails from './pages/blogDetails.jsx';
+import Cruise from './pages/Cruise.jsx';
 
 // ScrollToTop component to reset scroll position on route change
 function ScrollToTop() {
@@ -70,6 +71,7 @@ function App() {
                 <Route path="/international" element={<International />} />
                 <Route path="/domestic" element={<Domestic />} />
                 <Route path="/blog/:id" element={<BlogDetails />} />
+                <Route path="/cruise" element={<Cruise />} />
               </Routes>
             </PageTransition>
           </div>

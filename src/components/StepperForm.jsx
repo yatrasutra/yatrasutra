@@ -196,7 +196,7 @@ export default function TravelEnquiryForm({
                 </div>
             </div>
             
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">Exclusive Cruise Voyage</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">Cordelia Cruise Voyage</h3>
               <p className="text-blue-100 text-sm sm:text-base mb-4 leading-relaxed">
                 Experience the ultimate luxury with our premium cruise packages to exotic destinations. 
                 Sail through crystal-clear waters while enjoying world-class amenities and personalized service.

@@ -37,6 +37,7 @@ export default function Navbar() {
             <Link to="/lakshadweep" className="transition hover:text-slate-900">Lakshadweep</Link>
             <Link to="/maldives" className="transition hover:text-slate-900">Maldives</Link>
             <Link to="/srilanka" className="transition hover:text-slate-900">Sri Lanka</Link>
+            <Link to="/cruise" className="transition hover:text-slate-900">Cruise</Link>
             <Link to="/blog" className="transition hover:text-slate-900">Blogs</Link>
           </div>
 
@@ -105,6 +106,7 @@ export default function Navbar() {
                         <Link to="/lakshadweep" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Lakshadweep</Link>
             <Link to="/maldives" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Maldives</Link>
                         <Link to="/srilanka" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Sri Lanka</Link>
+            <Link to="/cruise" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Cruise</Link>
             <Link to="/blog" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Blogs</Link>
             <div className="mt-3 flex items-center justify-between gap-3">
               {/* Socials */}

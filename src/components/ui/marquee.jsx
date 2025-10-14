@@ -5,7 +5,7 @@ const testimonials = [
     name: "Samridhi Sabharwal",
     location: "New Delhi",
     body: "Amazing, well trusted, good service 👍👍 They took care of all the details.",
-    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebbd1c0030f13b2ec0/view?project=68e3521900146ef84822&mode=user",
+    img: "https://images.unsplash.com/photo-1534438325700-9a16d0c726a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     rating: 5,
     destination: "Agatti Island, Lakshadweep"
   },
@@ -13,7 +13,7 @@ const testimonials = [
     name: "Ananthakrishnan S",
     location: "Kochi, Kerala",
     body: "Had an amazing trip to Kashmir. Everything was perfectly organized and the team made the journey comfortable, memorable, and truly unforgettable.",
-    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebbdc00036a8fdebe8/view?project=68e3521900146ef84822&mode=user",
+    img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     rating: 5,
     destination: "Kashmir"
   },
@@ -21,7 +21,7 @@ const testimonials = [
     name: "Roushan Raj Singh",
     location: "Bihar",
     body: "We went to Lakshadweep and had a nice experience. The trip was simple, well arranged, and we enjoyed the island without any hassle.",
-    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebbc480010886ee4a6/view?project=68e3521900146ef84822&mode=user",
+    img: "https://images.unsplash.com/photo-1534438325700-9a16d0c726a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     rating: 5,
     destination: "Lakshadweep"
   },
@@ -29,7 +29,7 @@ const testimonials = [
     name: "Paul Hongkung",
     location: "Panjabari, Assam",
     body: "We visited Lakshadweep as a family and had a really good experience. Everything went smoothly, and the team was responsive. A peaceful break with beautiful views and simple local food.",
-    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebbe6100256133155c/view?project=68e3521900146ef84822&mode=user",
+    img: "https://images.unsplash.com/photo-1534438325700-9a16d0c726a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     rating: 5,
     destination: "Lakshadweep"
   },
@@ -37,7 +37,7 @@ const testimonials = [
     name: "Alokesh Bhattacharjee",
     location: "Assam, India",
     body: "We were a group of 8 in Lakshadweep, and the trip was amazing! Everything was perfectly organized, and the team was very helpful. Highly recommended!",
-    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebbea1002d842d04af/view?project=68e3521900146ef84822&mode=user",
+    img: "https://images.unsplash.com/photo-1534438325700-9a16d0c726a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     rating: 5,
     destination: "Lakshadweep"
   },
@@ -45,7 +45,7 @@ const testimonials = [
     name: "Jibesh Chakraborty",
     location: "Guwahati, Assam",
     body: "My family trip to Agatti, Lakshadweep was excellent. The resort, food, and water activities were amazing. A very hassle-free journey with great hospitality.",
-    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebc025002b3de8c4f0/view?project=68e3521900146ef84822&mode=user",
+    img: "https://images.unsplash.com/photo-1534438325700-9a16d0c726a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     rating: 5,
     destination: "Agatti, Lakshadweep"
   },
@@ -53,7 +53,7 @@ const testimonials = [
     name: "Adv. Aparna Wagle",
     location: "Mumbai, Maharashtra",
     body: "Our Maldives anniversary trip was curated beautifully by Yatrasutra. Every detail, from the resort to decorations, made our special day amazing. Thank you!",
-    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebbf8000161286119f/view?project=68e3521900146ef84822&mode=user",
+    img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     rating: 5,
     destination: "Maldives"
   },
@@ -61,7 +61,7 @@ const testimonials = [
     name: "Delmi Vadakkan",
     location: "Ireland",
     body: "Had a great experience in Malaysia. Yatrasutra organized everything perfectly, allowing us to enjoy every moment stress-free.",
-    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebbfcc00382e381063/view?project=68e3521900146ef84822&mode=user",
+    img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     rating: 5,
     destination: "Malaysia"
   },
@@ -69,7 +69,7 @@ const testimonials = [
     name: "Sandeep D",
     location: "Karnataka",
     body: "We had a wonderful holiday in Lakshadweep! Yatrasutra Holidays provided outstanding service, and the resort staff were extremely polite and friendly. Highly recommended!",
-    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ebbffd0037a0bce1cf/view?project=68e3521900146ef84822&mode=user",
+    img: "https://images.unsplash.com/photo-1534438325700-9a16d0c726a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     rating: 5,
     destination: "Agatti Island, Lakshadweep"
   }
