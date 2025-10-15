@@ -2,7 +2,11 @@ import React from 'react';
 
 export default function Cruise() {
   const handleAllPackages = () => {
-    alert('Cruise packages coming soon! Contact us for more information.');
+    // Pre-filled WhatsApp message about Cordelia Cruises
+    const message = `Hello! I'm interested in booking a cruise with Cordelia Cruises. Could you please provide more information about the available packages?`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/918129667933?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   const handleWhatsApp = () => {

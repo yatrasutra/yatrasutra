@@ -34,7 +34,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-slate-700">
               <li><a href="mailto:info@yatrasutra.com" className="hover:text-slate-900 transition">info@yatrasutra.com</a></li>
               <li><a href="tel:+1234567890" className="hover:text-slate-900 transition">+91 81296 67933</a></li>
-              <li><Link to="/about" className="hover:text-slate-900 transition">About</Link></li>
+              <li><Link to="/about" className="hover:text-slate-900 transition">First Floor, Pillar No. 465, Penta Corner Building, Door No 39,40, near Changampuzha Metro Station, Edappally, Kerala 682024</Link></li>
             </ul>
           </div>
 
