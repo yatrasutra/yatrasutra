@@ -5,12 +5,12 @@ export default function Cruise() {
     // Pre-filled WhatsApp message about Cordelia Cruises
     const message = `Hello! I'm interested in booking a cruise with Cordelia Cruises. Could you please provide more information about the available packages?`;
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/918129667933?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/+91 9746816609?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/918129667933', '_blank');
+    window.open('https://wa.me/+91 9746816609', '_blank');
   };
 
   return (
