@@ -34,10 +34,11 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            <Link to="/srilanka" className="transition hover:text-slate-900">Sri Lanka</Link>
-            <Link to="/maldives" className="transition hover:text-slate-900">Maldives</Link>
             <Link to="/lakshadweep" className="transition hover:text-slate-900">Lakshadweep</Link>
-            <Link to="/#stories" className="transition hover:text-slate-900">Stories</Link>
+            <Link to="/maldives" className="transition hover:text-slate-900">Maldives</Link>
+            <Link to="/srilanka" className="transition hover:text-slate-900">Sri Lanka</Link>
+            <Link to="/cruise" className="transition hover:text-slate-900">Cruise</Link>
+            <Link to="/blog" className="transition hover:text-slate-900">Blogs</Link>
           </div>
 
           {/* Desktop CTA */}
@@ -58,12 +59,7 @@ export default function Navbar() {
                     <path d="M20.52 3.48A11.9 11.9 0 0012.05.05C5.53.05.25 5.33.25 11.86a11.74 11.74 0 001.56 5.89L.04 24l6.4-1.72a11.9 11.9 0 005.6 1.44h.01c6.53 0 11.81-5.28 11.81-11.81 0-3.15-1.23-6.12-3.34-8.33zM12.05 21.2a9.3 9.3 0 01-4.74-1.3l-.34-.2-3.79 1.02 1.01-3.69-.22-.38a9.28 9.28 0 01-1.39-4.79c0-5.14 4.18-9.32 9.33-9.32 2.49 0 4.83.97 6.59 2.73a9.227 9.227 0 012.73 6.59c0 5.15-4.19 9.34-9.34 9.34zm5.42-6.97c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15s-.77.97-.95 1.17-.35.22-.65.07c-.3-.15-1.26-.46-2.4-1.48a9.02 9.02 0 01-1.67-2.06c-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.47 1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.07 4.48.71.31 1.26.5 1.69.64.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/>
                   </svg>
                 </a>
-            <a
-              href="#get-started"
-              className="inline-flex items-center justify-center rounded-lg bg-orange-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
-            >
-              Start planning
-            </a>
+            
           </div>
 
           {/* Mobile menu button */}
@@ -107,10 +103,11 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            <Link to="/srilanka" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Sri Lanka</Link>
+                        <Link to="/lakshadweep" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Lakshadweep</Link>
             <Link to="/maldives" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Maldives</Link>
-            <Link to="/lakshadweep" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Lakshadweep</Link>
-            <Link to="/#stories" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Stories</Link>
+                        <Link to="/srilanka" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Sri Lanka</Link>
+            <Link to="/cruise" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Cruise</Link>
+            <Link to="/blog" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Blogs</Link>
             <div className="mt-3 flex items-center justify-between gap-3">
               {/* Socials */}
               <div className="flex items-center gap-3">
@@ -130,12 +127,7 @@ export default function Navbar() {
                   </svg>
                 </a>
               </div>
-              <a
-                href="#get-started"
-                className="flex-1 rounded-lg bg-orange-600 px-4 py-2 text-center font-semibold text-white hover:bg-orange-700"
-              >
-                Start planning
-              </a>
+              
             </div>
           </div>
         )}

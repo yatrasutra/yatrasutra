@@ -8,6 +8,9 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="font-melody text-4xl text-orange-600">yatrasutra</div>
+            <p className="mt-3 text-xs font-bold text-blue-900 max-w-xs">
+              We handle the chaos - You just pack
+            </p>
             <p className="mt-3 text-sm text-slate-700 max-w-xs">
               Curating premium island and beach journeys across Lakshadweep, Maldives, and Sri Lanka.
             </p>
@@ -29,8 +32,7 @@ export default function Footer() {
             <h4 className="text-slate-900 font-semibold mb-3">Contact</h4>
             <ul className="space-y-2 text-sm text-slate-700">
               <li><a href="mailto:info@yatrasutra.com" className="hover:text-slate-900 transition">info@yatrasutra.com</a></li>
-              <li><a href="tel:+1234567890" className="hover:text-slate-900 transition">+91 12345 67890</a></li>
-              <li><a href="#contact" className="hover:text-slate-900 transition">Contact Form</a></li>
+              <li><a href="tel:+1234567890" className="hover:text-slate-900 transition">+91 81296 67933</a></li>
             </ul>
           </div>
 
