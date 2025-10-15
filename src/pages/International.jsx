@@ -50,7 +50,7 @@ export default function International() {
 
   const handleWhatsApp = (pkg) => {
     const message = `Hi! I'm interested in the ${pkg.destination} package (₹${pkg.price}). Could you please provide more details?`;
-    const whatsappUrl = `https://wa.me/918129667933?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+91 9746816609?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
