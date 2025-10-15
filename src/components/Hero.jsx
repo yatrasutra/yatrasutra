@@ -41,7 +41,7 @@ export default function Hero() {
               {" "}to adventure
             </h1>
             <p className="mt-8 max-w-xl text-base leading-7 text-slate-700 sm:text-lg">
-              YatraSutra helps you discover destinations, craft itineraries, and
+              Yatrasutra helps you discover destinations, craft itineraries, and
               travel smarter—beautifully organized in one place.
             </p>
             

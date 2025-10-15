@@ -180,22 +180,22 @@ export default function Cruise() {
                   {
                     title: "Interior Standard / Upper / Premium",
                     desc: "Cozy, budget-friendly comfort for up to 4 guests.",
-                    img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=80"
+                    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ef9500000cf5305f6d/view?project=68e3521900146ef84822&mode=user"
                   },
                   {
                     title: "Ocean View (Standard, Upper, Premium)",
                     desc: "Wake up to serene sea views every morning.",
-                    img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80"
+                    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ef957f002724717c3d/view?project=68e3521900146ef84822&mode=user"
                   },
                   {
                     title: "Balcony Suite",
                     desc: "Enjoy sunrises and sunsets from your private balcony.",
-                    img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80"
+                    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ef956000269f37753b/view?project=68e3521900146ef84822&mode=user"
                   },
                   {
                     title: "Suite & Chairman's Suite",
                     desc: "Ultra-luxurious living with private jacuzzis, walk-in closets, and personalized service.",
-                    img: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80"
+                    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ef95720001a11fa6b3/view?project=68e3521900146ef84822&mode=user"
                   }
                 ].map((room, idx) => (
                   <div key={idx} className="rounded-xl border border-white/40 bg-white/80 backdrop-blur p-5 shadow-sm">
