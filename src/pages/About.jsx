@@ -63,14 +63,7 @@ export default function About() {
               </div>
 
               <div className="flex flex-wrap gap-2 pt-2">
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-2 py-2 rounded-full shadow-md">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium text-slate-700">500+ Happy Travelers</span>
-                </div>
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-2 py-2 rounded-full shadow-md">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium text-slate-700">10+ Years Experience</span>
-                </div>
+                
                 
               </div>
             </div>
@@ -79,7 +72,7 @@ export default function About() {
           
 
           {/* Enhanced Expertise Section */}
-          <div className="mb-10 md:mb-20 md:mt-40">
+          <div className="mb-10 md:mb-20 md:mt-40 mt-[-30px]">
             <div className="text-start mb-12">
               <h2 className="text-3xl lg:text-4xl text-blue-900 font-bold mb-4">
                 Our Signature Destinations
