@@ -45,13 +45,13 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden items-center gap-3 sm:flex">
             {/* Socials */}
-            <a href="#instagram" aria-label="Instagram" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
+            <a href="https://www.instagram.com/yatra.sutra?igsh=MXJ4cm5tNWVyMjc=" aria-label="Instagram" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
               <FaInstagram className="h-5 w-5" />
             </a>
-            <a href="#facebook" aria-label="Facebook" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
+            <a href="https://www.facebook.com/people/Yatra-Sutra/61574118189623/#" aria-label="Facebook" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
               <FaFacebookF className="h-5 w-5" />
             </a>
-            <a href="#whatsapp" aria-label="WhatsApp" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
+            <a href="https://wa.me/919746816609" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
               <FaWhatsapp className="h-5 w-5" />
             </a>
             
@@ -126,13 +126,13 @@ export default function Navbar() {
             {/* Footer socials fixed at bottom */}
             <div className="border-t border-white/40 px-6 py-5 bg-transparent">
               <div className="flex items-center justify-center gap-5">
-                <a href="#instagram" aria-label="Instagram" className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-md transition hover:scale-105">
+                <a href="https://www.instagram.com/yatra.sutra?igsh=MXJ4cm5tNWVyMjc=" aria-label="Instagram" className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-md transition hover:scale-105">
                   <FaInstagram className="h-6 w-6" />
                 </a>
-                <a href="#facebook" aria-label="Facebook" className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-md transition hover:scale-105">
+                <a href="https://www.facebook.com/people/Yatra-Sutra/61574118189623/#" aria-label="Facebook" className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-md transition hover:scale-105">
                   <FaFacebookF className="h-6 w-6" />
                 </a>
-                <a href="#whatsapp" aria-label="WhatsApp" className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-md transition hover:scale-105">
+                <a href="https://wa.me/919746816609" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-md transition hover:scale-105">
                   <FaWhatsapp className="h-6 w-6" />
                 </a>
               </div>

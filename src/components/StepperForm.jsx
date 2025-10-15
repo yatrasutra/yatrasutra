@@ -193,8 +193,11 @@ export default function TravelEnquiryForm({
             <div className="relative z-10 p-6 sm:p-8">
               {/* Cruise Icon */}
               <div className="mb-4">
-                <div className="w-16 h-16 bg-white/20 rounded-full p-2 flex items-center justify-center backdrop-blur-sm">
-                  <img src="/ship2.svg" />
+                <div className="w-16 h-16 bg-white/20 rounded-full p-1 flex items-center justify-center backdrop-blur-sm">
+                  <img 
+                    src="https://fra.cloud.appwrite.io/v1/storage/buckets/68ebbbcb0032e5820fc4/files/68ee7c0600086af945b4/view?project=68e3521900146ef84822&mode=user" 
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
             </div>
             

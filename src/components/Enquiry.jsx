@@ -20,7 +20,7 @@ const EnquirySection = () => {
     {
       name: "WhatsApp",
       icon: <FaWhatsapp className="w-6 h-6" />,
-      href: "https://wa.me/+91 81296 67933",
+      href: "https://wa.me/+919746816609",
       color: "text-green-600",
       bgColor: "bg-gradient-to-r from-green-100 to-emerald-100",
       hoverBg: "hover:from-green-200 hover:to-emerald-200",
@@ -29,7 +29,7 @@ const EnquirySection = () => {
     {
       name: "Phone",
       icon: <FaPhoneAlt className="w-6 h-6" />,
-      href: "tel:+91 81296 67933",
+      href: "tel:+919746816609",
       color: "text-blue-600",
       bgColor: "bg-gradient-to-r from-blue-100 to-cyan-100",
       hoverBg: "hover:from-blue-200 hover:to-cyan-200",
