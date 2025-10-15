@@ -21,7 +21,7 @@ export default function SriLanka() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/40 to-transparent" />
             <div className="absolute inset-0 flex flex-col items-start justify-end p-6 sm:p-10">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white drop-shadow-md">Sri Lanka – <span className="text-orange-600">Tour Packages</span></h1>
-              <p className="mt-3 sm:mt-4 max-w-3xl text-white/90">Sri Lanka, the Pearl of the Indian Ocean, offers a perfect blend of heritage, romance, wildlife, and beach escapes. Our packages are carefully curated to cater to all types of travelers, with expanded day-by-day itineraries for every option.</p>
+              <p className="mt-3 sm:mt-4 max-w-3xl text-white/90">Sri Lanka, the Pearl of the Indian Ocean, offers a perfect blend of heritage, romance, wildlife, and beach escapes. Our packages are curated to cater to all types of travelers.</p>
               
             </div>
           </div>
