@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 const domesticPackages = [
@@ -69,6 +70,11 @@ const domesticPackages = [
 
 export default function Domestic() {
   const [hoveredCard, setHoveredCard] = useState(null);
+  const navigate = useNavigate();
+
+  const handleViewAllDestinations = () => {
+    navigate('/domestic');
+  };
 
   return (
     <section className="w-full mt-[-2px] md:mt-[-30px] overflow-hidden relative">
@@ -157,7 +163,10 @@ export default function Domestic() {
         {/* Bottom CTA Section */}
         <div className=" text-center mt-6 sm:mt-6">
           <div className="flex flex-col sm:flex-row gap-3 items-center justify-center md:justify-end w-full mx-auto">
-            <button className="inline-flex items-center justify-center rounded-tr-[15px] rounded-bl-[15px] bg-orange-600 px-4 sm:px-5 py-2.5 sm:py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 w-[90%] h-[50px] sm:w-auto">
+            <button 
+              onClick={handleViewAllDestinations}
+              className="inline-flex items-center justify-center rounded-tr-[15px] rounded-bl-[15px] bg-orange-600 px-4 sm:px-5 py-2.5 sm:py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 w-[90%] h-[50px] sm:w-auto"
+            >
               View all domestic destinations <MdKeyboardDoubleArrowRight className="ml-2 text-xl mt-1" size={25} />
             </button>
 
