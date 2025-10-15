@@ -14,20 +14,13 @@ export default function Maldives() {
       {/* Hero */}
       <div className="relative">
         <div className="mx-auto max-w-7xl mt-[-30px] md:mt-0 px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28">
-          <div className="rounded-3xl border border-white/40 bg-white/70 backdrop-blur-xl shadow-2xl p-6 sm:p-10">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-blue-900">
-              Maldives <span className="text-orange-600">Tour Packages</span>
-            </h1>
-            <p className="mt-3 sm:mt-4 max-w-3xl text-slate-700">
-              The Maldives, a paradise of over 1,000 coral islands, offers two distinct travel experiences: 
-              <span className="font-semibold text-blue-700"> Private Island Resorts</span> for exclusive luxury stays and 
-              <span className="font-semibold text-teal-700"> Public/Local Islands</span> for authentic Maldivian culture and budget-friendly getaways.
-            </p>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">Luxury Resorts</span>
-              <span className="inline-flex items-center rounded-full bg-teal-100 px-3 py-1 text-xs font-semibold text-teal-700">Local Islands</span>
-              <span className="inline-flex items-center rounded-full bg-cyan-100 px-3 py-1 text-xs font-semibold text-cyan-700">Overwater Villas</span>
-              <span className="inline-flex items-center rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-purple-700">Water Sports</span>
+          <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+            <img src="https://i.pinimg.com/1200x/92/b1/79/92b1791393625bbb8f4d16d9a64c7873.jpg" alt="Maldives" className="h-[260px] sm:h-[360px] lg:h-[460px] w-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/40 to-transparent" />
+            <div className="absolute inset-0 flex flex-col items-start justify-end p-6 sm:p-10">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white drop-shadow-md">Maldives – <span className="text-orange-600">Tour Packages</span></h1>
+              <p className="mt-3 sm:mt-4 max-w-3xl text-white/90">The Maldives, a paradise of over 1,000 coral islands, offers two distinct travel experiences: Private Island Resorts for exclusive luxury stays and Public/Local Islands for authentic Maldivian culture and budget-friendly getaways.</p>
+              
             </div>
           </div>
         </div>

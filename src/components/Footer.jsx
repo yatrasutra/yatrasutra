@@ -24,7 +24,7 @@ export default function Footer() {
               <li><Link to="/lakshadweep" className="hover:text-slate-900 transition">Lakshadweep</Link></li>
               <li><Link to="/srilanka" className="hover:text-slate-900 transition">Sri Lanka</Link></li>
               <li><Link to="/maldives" className="hover:text-slate-900 transition">Maldives</Link></li>
-              <li><Link to="/about" className="hover:text-slate-900 transition">About</Link></li>
+              
             </ul>
           </div>
 
@@ -34,6 +34,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-slate-700">
               <li><a href="mailto:info@yatrasutra.com" className="hover:text-slate-900 transition">info@yatrasutra.com</a></li>
               <li><a href="tel:+1234567890" className="hover:text-slate-900 transition">+91 81296 67933</a></li>
+              <li><Link to="/about" className="hover:text-slate-900 transition">About</Link></li>
             </ul>
           </div>
 

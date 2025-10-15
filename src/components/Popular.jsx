@@ -85,6 +85,7 @@ export default function Popular() {
                 >
                   {/* Background Image */}
                   <div className="absolute inset-0">
+                    
                     <img
                       src={pkg.image}
                       alt={pkg.name}

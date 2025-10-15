@@ -14,18 +14,13 @@ export default function Lakshadweep() {
       {/* Hero */}
       <div className="relative">
         <div className="mx-auto max-w-7xl mt-[-30px] md:mt-0 px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28">
-          <div className="rounded-3xl border border-white/40 bg-white/70 backdrop-blur-xl shadow-2xl p-6 sm:p-10">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-blue-900">
-              Lakshadweep – <span className="text-orange-600">Limited Access, Unlimited Beauty</span>
-            </h1>
-            <p className="mt-3 sm:mt-4 max-w-3xl text-slate-700">
-              Out of 36 islands, only 4 are open to travelers. Explore <span className="font-semibold text-blue-700">Agatti, Bangaram, Thinnakara, and Kavaratti</span> with our exclusive packages.
-            </p>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">Limited Access</span>
-              <span className="inline-flex items-center rounded-full bg-teal-100 px-3 py-1 text-xs font-semibold text-teal-700">4 Islands Open</span>
-              <span className="inline-flex items-center rounded-full bg-cyan-100 px-3 py-1 text-xs font-semibold text-cyan-700">Special Permits</span>
-              <span className="inline-flex items-center rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-purple-700">All-Inclusive</span>
+          <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop" alt="Lakshadweep lagoon" className="h-[260px] sm:h-[360px] lg:h-[460px] w-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/40 to-transparent" />
+            <div className="absolute inset-0 flex flex-col items-start justify-end p-6 sm:p-10">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white drop-shadow-md">Lakshadweep – <span className="text-orange-600">Limited Access, Unlimited Beauty</span></h1>
+              <p className="mt-3 sm:mt-4 max-w-3xl text-white/90">Out of 36 islands, only 4 are open to travelers. Explore <span className="font-semibold text-white">Agatti, Bangaram, Thinnakara, and Kavaratti</span> with our exclusive packages.</p>
+              
             </div>
           </div>
         </div>

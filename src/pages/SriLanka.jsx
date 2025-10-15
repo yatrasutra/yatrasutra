@@ -15,20 +15,14 @@ export default function SriLanka() {
     <section className="w-full overflow-hidden relative">
       {/* Hero */}
       <div className="relative">
-        
         <div className="mx-auto max-w-7xl mt-[-30px] md:mt-0 px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28">
-          <div className="rounded-3xl border border-white/40 bg-white/70 backdrop-blur-xl shadow-2xl p-6 sm:p-10">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-indigo-900">
-              Sri Lanka <span className="text-orange-600">Tour Packages</span>
-            </h1>
-            <p className="mt-3 sm:mt-4 max-w-3xl text-slate-700">
-              Sri Lanka, the Pearl of the Indian Ocean, offers a perfect blend of heritage, romance, wildlife, and beach escapes.
-              Our packages are carefully curated to cater to all types of travelers, with expanded day-by-day itineraries for every option.
-            </p>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <span className="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-xs font-semibold text-orange-700">Heritage</span>
-              <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">Honeymoon</span>
-              <span className="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">Beaches</span>
+          <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+            <img src="https://i.pinimg.com/1200x/7f/c1/3b/7fc13ba42087ec1b6817254051a6580e.jpg" alt="srilanka" className="h-[260px] sm:h-[360px] lg:h-[460px] w-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/40 to-transparent" />
+            <div className="absolute inset-0 flex flex-col items-start justify-end p-6 sm:p-10">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white drop-shadow-md">Sri Lanka – <span className="text-orange-600">Tour Packages</span></h1>
+              <p className="mt-3 sm:mt-4 max-w-3xl text-white/90">Sri Lanka, the Pearl of the Indian Ocean, offers a perfect blend of heritage, romance, wildlife, and beach escapes. Our packages are carefully curated to cater to all types of travelers, with expanded day-by-day itineraries for every option.</p>
+              
             </div>
           </div>
         </div>
