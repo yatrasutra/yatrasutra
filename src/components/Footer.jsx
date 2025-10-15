@@ -21,8 +21,9 @@ export default function Footer() {
             <h4 className="text-slate-900 font-semibold mb-3">Quick Links</h4>
             <ul className="space-y-3 text-sm text-slate-700">
               <li><Link to="/" className="hover:text-slate-900 transition">Home</Link></li>
-              <li><a href="/#itineraries" className="hover:text-slate-900 transition">Packages</a></li>
+              <li><Link to="/lakshadweep" className="hover:text-slate-900 transition">Lakshadweep</Link></li>
               <li><Link to="/srilanka" className="hover:text-slate-900 transition">Sri Lanka</Link></li>
+              <li><Link to="/maldives" className="hover:text-slate-900 transition">Maldives</Link></li>
               <li><Link to="/about" className="hover:text-slate-900 transition">About</Link></li>
             </ul>
           </div>

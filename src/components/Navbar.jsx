@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -45,20 +46,14 @@ export default function Navbar() {
           <div className="hidden items-center gap-3 sm:flex">
             {/* Socials */}
             <a href="#instagram" aria-label="Instagram" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-                    <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm10 2H7a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3zm-5 3.5A4.5 4.5 0 1112 17a4.5 4.5 0 010-9zm0 2A2.5 2.5 0 1014.5 12 2.5 2.5 0 0012 9.5zM17.5 6A1.5 1.5 0 1116 7.5 1.5 1.5 0 0117.5 6z"/>
-                  </svg>
-                </a>
-                <a href="#facebook" aria-label="Facebook" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-                    <path d="M13 22v-8h2.5l.5-3H13V9.25C13 8.56 13.56 8 14.25 8H16V5h-2c-2.21 0-4 1.79-4 4v2H8v3h2v8h3z"/>
-                  </svg>
-                </a>
-                <a href="#whatsapp" aria-label="WhatsApp" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-                    <path d="M20.52 3.48A11.9 11.9 0 0012.05.05C5.53.05.25 5.33.25 11.86a11.74 11.74 0 001.56 5.89L.04 24l6.4-1.72a11.9 11.9 0 005.6 1.44h.01c6.53 0 11.81-5.28 11.81-11.81 0-3.15-1.23-6.12-3.34-8.33zM12.05 21.2a9.3 9.3 0 01-4.74-1.3l-.34-.2-3.79 1.02 1.01-3.69-.22-.38a9.28 9.28 0 01-1.39-4.79c0-5.14 4.18-9.32 9.33-9.32 2.49 0 4.83.97 6.59 2.73a9.227 9.227 0 012.73 6.59c0 5.15-4.19 9.34-9.34 9.34zm5.42-6.97c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15s-.77.97-.95 1.17-.35.22-.65.07c-.3-.15-1.26-.46-2.4-1.48a9.02 9.02 0 01-1.67-2.06c-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.47 1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.07 4.48.71.31 1.26.5 1.69.64.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/>
-                  </svg>
-                </a>
+              <FaInstagram className="h-5 w-5" />
+            </a>
+            <a href="#facebook" aria-label="Facebook" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
+              <FaFacebookF className="h-5 w-5" />
+            </a>
+            <a href="#whatsapp" aria-label="WhatsApp" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
+              <FaWhatsapp className="h-5 w-5" />
+            </a>
             
           </div>
 
@@ -82,55 +77,68 @@ export default function Navbar() {
           </button>
         </nav>
 
-        {/* Mobile dropdown */}
-        {open && (
-          <div className="mx-2 mt-2 rounded-2xl border border-white/20 bg-white/30 p-4 text-sm text-slate-800 shadow-lg backdrop-blur-md sm:hidden">
-            <Link to="/about" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">About us</Link>
-            <div className="mt-1">
-              <button
-                onClick={() => setPackagesOpen(!packagesOpen)}
-                className="flex w-full items-center justify-between rounded-lg px-3 py-2 hover:bg-white/50"
-              >
-                Packages
-                <svg className={`h-4 w-4 transition-transform ${packagesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        {/* Mobile full-screen drawer */}
+        <div className={`sm:hidden fixed inset-0 z-40 ${open ? 'pointer-events-auto' : 'pointer-events-none'}`}>
+          {/* Backdrop */}
+          <div
+            onClick={() => setOpen(false)}
+            className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${open ? 'opacity-100' : 'opacity-0'}`}
+          />
+          {/* Sliding Panel */}
+          <div
+            className={`absolute right-0 top-0 h-full w-full max-w-none bg-gradient-to-b from-white/80 to-white/60 backdrop-blur-xl shadow-2xl transition-transform duration-500 ease-out ${open ? 'translate-x-0' : 'translate-x-full'} flex flex-col`}
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between px-6 py-5 border-b border-white/40">
+              <span className="font-melody text-3xl text-orange-600">yatrasutra</span>
+              <button onClick={() => setOpen(false)} aria-label="Close" className="rounded-md p-3 text-slate-700 hover:bg-white/60">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
+                  <path fillRule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 11-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clipRule="evenodd" />
                 </svg>
               </button>
-              {packagesOpen && (
-                <div className="ml-4 mt-1 space-y-1">
-                  <Link to="/international" className="block rounded-lg px-3 py-2 hover:bg-white/50">International</Link>
-                  <Link to="/domestic" className="block rounded-lg px-3 py-2 hover:bg-white/50">Domestic</Link>
-                </div>
-              )}
             </div>
-                        <Link to="/lakshadweep" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Lakshadweep</Link>
-            <Link to="/maldives" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Maldives</Link>
-                        <Link to="/srilanka" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Sri Lanka</Link>
-            <Link to="/cruise" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Cruise</Link>
-            <Link to="/blog" className="mt-1 block rounded-lg px-3 py-2 hover:bg-white/50">Blogs</Link>
-            <div className="mt-3 flex items-center justify-between gap-3">
-              {/* Socials */}
-              <div className="flex items-center gap-3">
-                <a href="#instagram" aria-label="Instagram" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-                    <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm10 2H7a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3zm-5 3.5A4.5 4.5 0 1112 17a4.5 4.5 0 010-9zm0 2A2.5 2.5 0 1014.5 12 2.5 2.5 0 0012 9.5zM17.5 6A1.5 1.5 0 1116 7.5 1.5 1.5 0 0117.5 6z"/>
+            {/* Menu */}
+            <div className="flex-1 overflow-y-auto px-6 py-6 pb-24 text-slate-800 text-lg">
+              <Link to="/about" onClick={() => setOpen(false)} className="block rounded-xl px-4 py-4 hover:bg-white/70 transition">About us</Link>
+              <div className="mt-2">
+                <button
+                  onClick={() => setPackagesOpen(!packagesOpen)}
+                  className="flex w-full items-center justify-between rounded-xl px-4 py-4 hover:bg-white/70 transition"
+                >
+                  Packages
+                  <svg className={`h-5 w-5 transition-transform ${packagesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
+                </button>
+                <div className={`grid overflow-hidden transition-all duration-300 ${packagesOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}> 
+                  <div className="min-h-0">
+                    <Link to="/international" onClick={() => setOpen(false)} className="block rounded-lg px-4 py-3 hover:bg-white/70 transition">International</Link>
+                    <Link to="/domestic" onClick={() => setOpen(false)} className="block rounded-lg px-4 py-3 hover:bg-white/70 transition">Domestic</Link>
+                  </div>
+                </div>
+              </div>
+              <Link to="/lakshadweep" onClick={() => setOpen(false)} className="mt-2 block rounded-xl px-4 py-4 hover:bg-white/70 transition">Lakshadweep</Link>
+              <Link to="/maldives" onClick={() => setOpen(false)} className="mt-2 block rounded-xl px-4 py-4 hover:bg-white/70 transition">Maldives</Link>
+              <Link to="/srilanka" onClick={() => setOpen(false)} className="mt-2 block rounded-xl px-4 py-4 hover:bg-white/70 transition">Sri Lanka</Link>
+              <Link to="/cruise" onClick={() => setOpen(false)} className="mt-2 block rounded-xl px-4 py-4 hover:bg-white/70 transition">Cruise</Link>
+              <Link to="/blog" onClick={() => setOpen(false)} className="mt-2 block rounded-xl px-4 py-4 hover:bg-white/70 transition">Blogs</Link>
+            </div>
+            {/* Footer socials fixed at bottom */}
+            <div className="border-t border-white/40 px-6 py-5 bg-transparent">
+              <div className="flex items-center justify-center gap-5">
+                <a href="#instagram" aria-label="Instagram" className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-md transition hover:scale-105">
+                  <FaInstagram className="h-6 w-6" />
                 </a>
-                <a href="#facebook" aria-label="Facebook" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-                    <path d="M13 22v-8h2.5l.5-3H13V9.25C13 8.56 13.56 8 14.25 8H16V5h-2c-2.21 0-4 1.79-4 4v2H8v3h2v8h3z"/>
-                  </svg>
+                <a href="#facebook" aria-label="Facebook" className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-md transition hover:scale-105">
+                  <FaFacebookF className="h-6 w-6" />
                 </a>
-                <a href="#whatsapp" aria-label="WhatsApp" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-                    <path d="M20.52 3.48A11.9 11.9 0 0012.05.05C5.53.05.25 5.33.25 11.86a11.74 11.74 0 001.56 5.89L.04 24l6.4-1.72a11.9 11.9 0 005.6 1.44h.01c6.53 0 11.81-5.28 11.81-11.81 0-3.15-1.23-6.12-3.34-8.33zM12.05 21.2a9.3 9.3 0 01-4.74-1.3l-.34-.2-3.79 1.02 1.01-3.69-.22-.38a9.28 9.28 0 01-1.39-4.79c0-5.14 4.18-9.32 9.33-9.32 2.49 0 4.83.97 6.59 2.73a9.227 9.227 0 012.73 6.59c0 5.15-4.19 9.34-9.34 9.34zm5.42-6.97c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15s-.77.97-.95 1.17-.35.22-.65.07c-.3-.15-1.26-.46-2.4-1.48a9.02 9.02 0 01-1.67-2.06c-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.47 1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.07 4.48.71.31 1.26.5 1.69.64.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/>
-                  </svg>
+                <a href="#whatsapp" aria-label="WhatsApp" className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-md transition hover:scale-105">
+                  <FaWhatsapp className="h-6 w-6" />
                 </a>
               </div>
-              
             </div>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );
