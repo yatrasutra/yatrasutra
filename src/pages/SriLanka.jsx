@@ -2,13 +2,15 @@ import React from 'react';
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 
-
-
 export default function SriLanka() {
   const navigate = useNavigate();
 
   const handleAllPackages = () => {
     navigate('/international?category=Sri Lanka');
+  };
+
+  const handleEnquireNow = () => {
+    window.open('https://wa.me/919746816609', '_blank');
   };
 
   return (
@@ -141,7 +143,10 @@ export default function SriLanka() {
                 ✅ All packages include: 3★/4★ hotel accommodation (upgradeable), daily breakfast, private transfers, sightseeing, guide services & taxes
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
-                <button className="inline-flex items-center gap-2 rounded-tr-lg rounded-bl-lg bg-orange-600 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-orange-700">
+                <button 
+                  onClick={handleEnquireNow}
+                  className="inline-flex items-center gap-2 rounded-tr-lg rounded-bl-lg bg-orange-600 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-orange-700"
+                >
                   Enquire Now
                 </button>
                 <button 
@@ -159,5 +164,3 @@ export default function SriLanka() {
     </section>
   );
 }
-
-

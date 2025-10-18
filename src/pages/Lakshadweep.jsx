@@ -9,6 +9,10 @@ export default function Lakshadweep() {
     navigate('/domestic?category=Lakshadweep');
   };
 
+  const handleEnquireNow = () => {
+    window.open('https://wa.me/919746816609', '_blank');
+  };  
+
   return (
     <section className="w-full overflow-hidden relative">
       {/* Hero */}
@@ -291,7 +295,9 @@ export default function Lakshadweep() {
               </div>
               
               <div className="mt-6 flex flex-wrap gap-3">
-                <button className="inline-flex items-center gap-2 rounded-tr-lg rounded-bl-lg bg-orange-600 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-orange-700">
+                <button 
+                onClick={handleEnquireNow}
+                className="inline-flex items-center gap-2 rounded-tr-lg rounded-bl-lg bg-orange-600 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-orange-700">
                   Enquire Now
                 </button>
                 <button 

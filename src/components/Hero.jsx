@@ -1,5 +1,6 @@
+import React from 'react';
 
-export default function Hero() {
+export default function Hero({ onGetStartedClick }) {
   const handleDestinationsClick = (e) => {
     e.preventDefault();
     const popularSection = document.getElementById('popular-destinations');
@@ -46,12 +47,12 @@ export default function Hero() {
             </p>
             
             <div className="mt-12 flex items-center gap-3">
-              <a
-                href="#get-started"
+              <button
+                onClick={onGetStartedClick}
                 className="inline-flex items-center justify-center rounded-lg bg-orange-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 flex-1 max-w-[140px]"
               >
                 Get Started
-              </a>
+              </button>
               <a
                 href="#"
                 onClick={handleDestinationsClick}
