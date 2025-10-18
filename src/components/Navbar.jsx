@@ -48,7 +48,7 @@ export default function Navbar() {
             <a href="https://www.instagram.com/yatra.sutra?igsh=MXJ4cm5tNWVyMjc=" aria-label="Instagram" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
               <FaInstagram className="h-5 w-5" />
             </a>
-            <a href="https://www.facebook.com/people/Yatra-Sutra/61574118189623/#" aria-label="Facebook" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
+            <a href="https://www.facebook.com/people/Yatrasutra-Holidays/61575130194369/?rdid=G7DnXyLX2yfTB9zW&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BHSdmVZUh%2F" aria-label="Facebook" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">
               <FaFacebookF className="h-5 w-5" />
             </a>
             <a href="https://wa.me/919746816609" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="grid h-9 w-9 place-items-center rounded-lg border border-white/40 bg-white text-orange-600 shadow-sm backdrop-blur-sm transition hover:bg-white/50">

@@ -360,7 +360,7 @@ export default function Domestic() {
                     WhatsApp
                   </button>
                   <button
-                    onClick={() => window.open(`mailto:yatrasutraholidays@gmail.com?subject=Inquiry about ${selectedPackage.destination} package&body=Hi, I'm interested in the ${selectedPackage.destination} package (₹${selectedPackage.price}). Could you please provide more details?`)}
+                    onClick={() => window.open(`mailto:info@yatrasutra.com?subject=Inquiry about ${selectedPackage.destination} package&body=Hi, I'm interested in the ${selectedPackage.destination} package (₹${selectedPackage.price}). Could you please provide more details?`)}
                     className="flex items-center justify-center rounded-tr-lg rounded-bl-lg bg-blue-900 px-4 py-4 text-lg font-semibold text-white shadow-xl transition-all duration-300 hover:from-blue-600 hover:to-blue-700 hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98]"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
