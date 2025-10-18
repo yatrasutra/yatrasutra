@@ -1,7 +1,7 @@
-
 import React, { useState, Children, useRef, useLayoutEffect } from 'react';
 import { FaInfoCircle } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import toast, { Toaster } from "react-hot-toast";
 
 // Form Data Hook
 function useEnquiryForm() {
@@ -48,6 +48,7 @@ export default function TravelEnquiryForm({
   const [currentStep, setCurrentStep] = useState(1);
   const [direction, setDirection] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { formData, updateField, isStepValid, resetForm } = useEnquiryForm();
   const navigate = useNavigate();
   
@@ -80,16 +81,55 @@ export default function TravelEnquiryForm({
     }
   };
 
-  const handleComplete = () => {
-    setIsSubmitted(true);
-    onSubmit(formData);
+  const handleSubmitToAPI = async (data) => {
+    setIsSubmitting(true);
+    const toastId = toast.loading("Submitting your travel plan request...");
     
-    // Auto reset after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setCurrentStep(1);
-      resetForm();
-    }, 3000);
+    try {
+      // Map budget to price to match backend model
+      const requestData = {
+        name: data.name,
+        destination: data.destination,
+        price: data.budget, // Map budget to price
+        phone: data.phone
+      };
+
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/planrequest`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(requestData),
+      });
+      
+      const result = await res.json();
+      
+      if (!res.ok) throw new Error(result.error || "Failed to submit request");
+      
+      toast.success("Travel plan request submitted successfully!", { id: toastId });
+      return result;
+    } catch (err) {
+      toast.error(err.message || "Failed to submit request.", { id: toastId });
+      throw err;
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleComplete = async () => {
+    try {
+      await handleSubmitToAPI(formData);
+      setIsSubmitted(true);
+      onSubmit(formData);
+      
+      // Auto reset after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setCurrentStep(1);
+        resetForm();
+      }, 3000);
+    } catch (error) {
+      // Error already handled by toast
+      console.error("Submission error:", error);
+    }
   };
 
   const handleStepClick = (step) => {
@@ -101,6 +141,7 @@ export default function TravelEnquiryForm({
 
   return (
     <section className={`w-full mt-1 md:mt-[-30px] overflow-hidden relative ${className}`}>
+      <Toaster position="top-center" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-16">
         {/* Header */}
         <div className="mb-6 sm:mb-8 md:mb-12 text-start sm:text-left">
@@ -163,14 +204,19 @@ export default function TravelEnquiryForm({
                       )}
                       <button
                         onClick={handleNext}
-                        disabled={!isStepValid(currentStep)}
+                        disabled={!isStepValid(currentStep) || isSubmitting}
                         className={`px-4 py-2 sm:px-5 sm:py-2.5 text-sm sm:text-base rounded-lg font-semibold transition-all duration-200 min-w-[100px] sm:min-w-[120px] ${
                           isStepValid(currentStep)
                             ? 'bg-orange-600 hover:bg-orange-700 text-white shadow-lg hover:shadow-xl'
                             : 'bg-slate-200 text-slate-400 cursor-not-allowed'
-                        }`}
+                        } ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                       >
-                        {isLastStep ? 'Submit Enquiry' : 'Next'}
+                        {isSubmitting ? (
+                          <div className="flex items-center justify-center">
+                            <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
+                            Submitting...
+                          </div>
+                        ) : isLastStep ? 'Submit Enquiry' : 'Next'}
                       </button>
                     </div>
                   </>
