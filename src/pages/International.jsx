@@ -13,7 +13,7 @@ export default function International() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [searchParams] = useSearchParams();
 
-  const countries = ["Maldives", "Sri Lanka", "Thailand", "Indonesia", "Malaysia", "Vietnam", "Dubai", "Bali"];
+  const countries = ["Maldives", "Sri Lanka", "Thailand", "Indonesia", "Malaysia", "Vietnam", "Dubai"];
 
   useEffect(() => {
     axios

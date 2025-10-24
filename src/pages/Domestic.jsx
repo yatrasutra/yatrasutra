@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { MdOutlineKeyboardDoubleArrowRight, MdFilterList } from "react-icons/md";
 import { useSearchParams } from "react-router-dom";
@@ -11,6 +11,9 @@ export default function Domestic() {
   const [selectedPackage, setSelectedPackage] = useState(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  // Pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9;
   const [searchParams] = useSearchParams();
 
   const countries = ["Lakshadweep", "Andaman & Nicobar Islands", "Kerala", "Meghalaya", "Himachal Pradesh", "Ladakh", "Sikkim", "Kashmir", "Rajasthan", "Hyderabad", "Odisha"];
@@ -41,6 +44,45 @@ export default function Domestic() {
     const matchesFilter = filter ? pkg.category?.toLowerCase().includes(filter.toLowerCase()) : true;
     return matchesSearch && matchesFilter;
   });
+
+  // Pagination calculations
+  const totalPages = Math.max(1, Math.ceil(filteredPackages.length / itemsPerPage));
+  const paginatedPackages = filteredPackages.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+  // Ref for scrolling to top of the grid when changing pages
+  const gridRef = useRef(null);
+
+  // Helper to change page and scroll the grid into view
+  const goToPage = (page) => {
+    const next = Math.max(1, Math.min(totalPages, page || 1));
+    setCurrentPage(next);
+    // Scroll the grid container into view; delay slightly to avoid timing/layout issues
+    const doScroll = () => {
+      if (gridRef && gridRef.current) {
+        try {
+          gridRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } catch (e) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    // Small timeout ensures scroll runs after React updates layout when necessary
+    setTimeout(doScroll, 60);
+  };
+
+  // Reset page when search or filter changes (and scroll to top)
+  useEffect(() => {
+    goToPage(1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search, filter]);
+
+  // Clamp currentPage if filteredPackages length changes
+  useEffect(() => {
+    if (currentPage > totalPages) setCurrentPage(totalPages);
+  }, [currentPage, totalPages]);
 
   const handleBookNow = (pkg) => {
     setSelectedPackage(pkg);
@@ -181,8 +223,8 @@ export default function Domestic() {
         </div>
       )}
 
-      {/* Grid */}
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
+  {/* Grid */}
+  <div ref={gridRef} className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
         {loading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {[...Array(6)].map((_, index) => (
@@ -190,8 +232,9 @@ export default function Domestic() {
             ))}
           </div>
         ) : (
+          <>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {filteredPackages.map((pkg) => (
+            {paginatedPackages.map((pkg) => (
               <div
                 key={pkg.$id}
                 className="group relative bg-white/50 backdrop-blur-lg border border-white/40 rounded-2xl shadow-xl overflow-hidden transition-transform duration-300 hover:-translate-y-1 flex flex-col h-full"
@@ -233,6 +276,44 @@ export default function Domestic() {
               <p className="text-center text-gray-500 col-span-full">No packages found.</p>
             )}
           </div>
+
+          {/* Pagination Controls */}
+          {!loading && totalPages > 1 && (
+            <div className="mt-8 flex items-center justify-center gap-3">
+              <button
+                onClick={() => goToPage(currentPage - 1)}
+                disabled={currentPage === 1}
+                className={`px-3 py-2 rounded-md text-sm font-medium ${currentPage === 1 ? 'bg-white/20 text-slate-400 cursor-not-allowed' : 'bg-white/70 text-slate-800 hover:bg-white'}`}
+              >
+                Prev
+              </button>
+
+              <div className="inline-flex items-center gap-2">
+                {Array.from({ length: totalPages }).map((_, i) => {
+                  const page = i + 1;
+                  return (
+                    <button
+                      key={page}
+                      onClick={() => goToPage(page)}
+                      aria-current={currentPage === page ? 'page' : undefined}
+                      className={`px-3 py-2 rounded-md text-sm font-medium ${currentPage === page ? 'bg-orange-600 text-white' : 'bg-white/70 text-slate-800 hover:bg-white'}`}
+                    >
+                      {page}
+                    </button>
+                  );
+                })}
+              </div>
+
+              <button
+                onClick={() => goToPage(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className={`px-3 py-2 rounded-md text-sm font-medium ${currentPage === totalPages ? 'bg-white/20 text-slate-400 cursor-not-allowed' : 'bg-white/70 text-slate-800 hover:bg-white'}`}
+              >
+                Next
+              </button>
+            </div>
+          )}
+          </>
         )}
       </div>
 
