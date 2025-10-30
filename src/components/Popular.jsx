@@ -55,6 +55,20 @@ export default function Popular() {
     navigate('/international');
   };
 
+  // Function to handle navigation to international page with filter
+  const handleViewPackage = (packageName) => {
+    // Convert package name to match filter format
+    const formattedName = packageName
+      .replace('Lakshadweep', 'Lakshadweep')
+      .replace('Sri Lanka', 'Sri Lanka')
+      .replace('Malaysia', 'Malaysia')
+      .replace('Maldives', 'Maldives')
+      .replace('Thailand', 'Thailand')
+      .replace('Vietnam', 'Vietnam');
+    
+    navigate(`/international?category=${encodeURIComponent(formattedName)}`);
+  };
+
   return (
     <section id="popular-destinations" className="w-full mt-[-80px] md:mt-[-90px] overflow-hidden relative">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
@@ -89,13 +103,17 @@ export default function Popular() {
                     animationDelay: `${index * 0.1}s`,
                   }}
                 >
-                  {/* Background Image */}
-                  <div className="absolute inset-0">
+                  {/* Background Image with Blur Effect */}
+                  <div className={`absolute inset-0 transition-all duration-300 ${
+                    hoveredCard === pkg.key ? 'backdrop-blur-sm' : ''
+                  }`}>
                     
                     <img
                       src={pkg.image}
                       alt={pkg.name}
-                      className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110"
+                      className={`h-full w-full object-cover transition-all duration-700 ${
+                        hoveredCard === pkg.key ? 'scale-110' : 'group-hover:scale-110'
+                      }`}
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -105,7 +123,9 @@ export default function Popular() {
                   </div>
 
                   {/* Top Badge */}
-                  <div className="absolute top-3 sm:top-4 left-3 sm:left-4 z-10">
+                  <div className={`absolute top-3 sm:top-4 left-3 sm:left-4 z-10 transition-all duration-300 ${
+                    hoveredCard === pkg.key ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
+                  }`}>
                     <div className="inline-flex items-center gap-1 rounded-full bg-white/20 backdrop-blur-md px-2 sm:px-3 py-1 text-xs font-medium text-white border border-white/30">
                       <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
                       {index < 2 ? 'Featured' : 'Top pick'}
@@ -113,7 +133,9 @@ export default function Popular() {
                   </div>
 
                   {/* Content */}
-                  <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-4 z-10">
+                  <div className={`absolute inset-0 flex flex-col justify-end p-4 sm:p-4 z-10 transition-all duration-300 ${
+                    hoveredCard === pkg.key ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
+                  }`}>
                     <div className="space-y-1 sm:space-y-1">
                       <h3 className={`font-bold text-white ${
                         pkg.position.includes('col-span-2') 
@@ -133,10 +155,17 @@ export default function Popular() {
                     </div>
                   </div>
 
-                  {/* Glassmorphism overlay on hover */}
-                  <div className={`absolute inset-0 bg-white/5 backdrop-blur-sm transition-opacity duration-300 pointer-events-none ${
+                  {/* View Button on Hover */}
+                  <div className={`absolute inset-0 flex items-center justify-center z-20 transition-all duration-300 ${
                     hoveredCard === pkg.key ? 'opacity-100' : 'opacity-0'
-                  }`} />
+                  }`}>
+                    <button 
+                      className="w-16 h-16 rounded-full bg-orange-500 flex items-center justify-center shadow-lg hover:bg-orange-600 transition-all duration-300 transform hover:scale-110 backdrop-blur-sm"
+                      onClick={() => handleViewPackage(pkg.name)}
+                    >
+                      <MdKeyboardDoubleArrowRight className="text-white text-2xl ml-1" />
+                    </button>
+                  </div>
                 </article>
               ))}
             </div>

@@ -13,7 +13,7 @@ export default function International() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [searchParams] = useSearchParams();
 
-  const countries = ["Maldives", "Sri Lanka", "Thailand", "Indonesia", "Malaysia", "Vietnam", "Dubai"];
+  const countries = ["All", "Maldives", "Sri Lanka", "Thailand", "Indonesia", "Malaysia", "Vietnam"];
 
   useEffect(() => {
     axios
@@ -32,13 +32,19 @@ export default function International() {
   useEffect(() => {
     const category = searchParams.get('category');
     if (category && countries.includes(category)) {
-      setFilter(category);
+      // If "All" is selected, clear the filter
+      if (category === "All") {
+        setFilter("");
+      } else {
+        setFilter(category);
+      }
     }
   }, [searchParams]);
 
   const filteredPackages = packages.filter((pkg) => {
     const matchesSearch = pkg.destination.toLowerCase().includes(search.toLowerCase());
-    const matchesFilter = filter ? pkg.category?.toLowerCase().includes(filter.toLowerCase()) : true;
+    // If filter is empty or "All" is selected, show all packages
+    const matchesFilter = !filter || filter === "All" ? true : pkg.category?.toLowerCase().includes(filter.toLowerCase());
     return matchesSearch && matchesFilter;
   });
 
@@ -152,13 +158,19 @@ export default function International() {
             />
             <div className="relative flex-shrink-0">
               <select
-                value={filter}
-                onChange={(e) => setFilter(e.target.value)}
+                value={filter || (countries.includes("All") ? "All" : "")}
+                onChange={(e) => {
+                  // If "All" is selected, clear the filter
+                  if (e.target.value === "All") {
+                    setFilter("");
+                  } else {
+                    setFilter(e.target.value);
+                  }
+                }}
                 className="appearance-none px-3 py-3 pr-10 rounded-lg border border-white/50 bg-white/70 backdrop-blur focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm cursor-pointer w-12 h-12"
               >
-                <option value=""></option>
                 {countries.map((country) => (
-                  <option key={country} value={country}>
+                  <option key={country} value={country === "All" ? "" : country}>
                     {country}
                   </option>
                 ))}
