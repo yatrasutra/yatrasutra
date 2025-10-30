@@ -66,7 +66,13 @@ export default function Popular() {
       .replace('Thailand', 'Thailand')
       .replace('Vietnam', 'Vietnam');
     
-    navigate(`/international?category=${encodeURIComponent(formattedName)}`);
+    // Special case: Lakshadweep should go to domestic page
+    if (packageName === 'Lakshadweep') {
+      navigate(`/domestic?category=${encodeURIComponent(formattedName)}`);
+    } else {
+      // All other packages go to international page
+      navigate(`/international?category=${encodeURIComponent(formattedName)}`);
+    }
   };
 
   return (
